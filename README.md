@@ -15,7 +15,7 @@ icesVocab implements R functions that access the [web services](http://vocab.ice
 icesVocab is implemented as an [R](https://www.r-project.org) package and available on [GitHub](https://cran.r-project.org/package=icesVocab).
 
 Installation
-------------
+------------ 
 
 icesVocab can be installed from GitHub using the `install_github` command from the `devtools` package:
 
