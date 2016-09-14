@@ -16,16 +16,17 @@ curlVocab <- function(url) {
 #' @importFrom XML xmlSize
 #' @importFrom XML getChildrenStrings
 #' @importFrom XML removeNodes
-#' @importFrom utils capture.output
 parseVocab <- function(x) {
   # parse the xml text string suppplied by the Datras webservice
   # returning a dataframe
-  capture.output(x <- xmlParse(x))
-  # capture.output is used to suppress the output message from xmlns:
-  #   "xmlns: URI ices.dk.local/DATRAS is not absolute"
+  x <- xmlParse(x)
 
   # get root node
   x <- xmlRoot(x)
+
+  # first element is a SKOS:collection (not needed)
+  removeNodes(x[[1]])
+
   # exit if no data is being returned
   if (xmlSize(x) == 0) return(NULL)
   nc <- length(getChildrenStrings(x[[1]]))
@@ -40,9 +41,6 @@ parseVocab <- function(x) {
   if (nc == 1) x <- matrix(x, 1, length(x), dimnames = list(names(x[1])))
   x <- as.data.frame(t(x), stringsAsFactors = FALSE)
   x <- simplify(x)
-
-  # return data frame now if empty
-  if (nrow(x) == 0) return(x)
 
   # clean trailing white space from text columns
   charcol <- which(sapply(x, is.character))

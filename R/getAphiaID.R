@@ -1,8 +1,11 @@
 #' Get Aphia Species Codes
 #'
-#' Get the aphia codes from the ICES vocabularies database
+#' Get the WoRMS AphiaIDs for ICES assessment species
 #'
 #' @return A data frame.
+#'
+#' @examples
+#' getAphiaID()
 #'
 #' @export
 

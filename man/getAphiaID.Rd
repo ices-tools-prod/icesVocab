@@ -10,6 +10,10 @@ getAphiaID()
 A data frame.
 }
 \description{
-Get the aphia codes from the ICES vocabularies database
+Get the WoRMS AphiaIDs for ICES assessment species
+}
+\examples{
+getAphiaID()
+
 }
 
