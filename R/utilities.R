@@ -24,7 +24,7 @@ parseVocab <- function(x) {
   # get root node
   x <- xmlRoot(x)
 
-  # first element is a SKOS:collection (not needed)
+  # first element is a SKOS:collection (needed, but need to sort out this skos API in general)
   removeNodes(x[[1]])
 
   # exit if no data is being returned
