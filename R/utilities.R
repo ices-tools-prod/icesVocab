@@ -24,12 +24,11 @@ parseVocab <- function(x) {
   # get root node
   x <- xmlRoot(x)
 
-  # first element is a SKOS:collection (needed, but need to sort out this skos API in general)
-  removeNodes(x[[1]])
-
   # exit if no data is being returned
   if (xmlSize(x) == 0) return(NULL)
   nc <- length(getChildrenStrings(x[[1]]))
+  # final field is always an error feild (try using xpath to avoid this)
+  removeNodes(x[[xmlSize(x)]])
 
   # restructure data into a data frame
   x <- sapply(1:xmlSize(x),
