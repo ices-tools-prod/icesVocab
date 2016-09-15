@@ -10,7 +10,7 @@
 icesVocab
 ======
 
-icesVocab implements R functions that access the [web services](http://vocab.ices.dk/services/RDF.aspx) of the [ICES (International Council for the Exploration of the Sea)](http://www.ices.dk/Pages/default.aspx) [Vocabularies](http://vocab.ices.dk/).
+icesVocab implements R functions that access the [RECO POX web services](http://vocab.ices.dk/services/POX.aspx) of the [ICES (International Council for the Exploration of the Sea)](http://www.ices.dk/Pages/default.aspx) [Vocabularies](http://vocab.ices.dk/).
 
 icesVocab is implemented as an [R](https://www.r-project.org) package and available on [GitHub](https://cran.r-project.org/package=icesVocab).
 
@@ -36,9 +36,9 @@ library(icesVocab)
 References
 ----------
 
-ICES Vocab web services:
+ICES Vocabularies RECO POX web services:
 
-[http://vocab.ices.dk/services/RDF.aspx](http://vocab.ices.dk/services/RDF.aspx).
+[http://vocab.ices.dk/services/POX.aspx](http://vocab.ices.dk/services/POX.aspx).
 
 ICES Vocab:
 

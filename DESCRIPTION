@@ -8,9 +8,9 @@ Suggests: knitr,
 Imports: RCurl,
          XML,
          utils
-Description: R interface to access the web services of the ICES (International
+Description: R interface to access the RECO POX web services of the ICES (International
              Council for the Exploration of the Sea) Vocabularies
-             database <http://vocab.ices.dk/services/RDF.aspx>.
+             database <http://vocab.ices.dk/services/POX.aspx>.
 License: GPL (>= 2)
-URL: http://vocab.ices.dk/services/RDF.aspx
+URL: http://vocab.ices.dk/services/POX.aspx
 RoxygenNote: 5.0.1
