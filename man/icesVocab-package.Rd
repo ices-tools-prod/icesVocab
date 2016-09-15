@@ -13,7 +13,7 @@ database <http://vocab.ices.dk/services/POX.aspx>.
 \details{
 \emph{Get dataset:}
 \tabular{ll}{
-  \code{\link{getCodeListType}} \tab retrieves all the code types\cr
+  \code{\link{getCodeTypeList}} \tab retrieves all the code types\cr
   \code{\link{getCodeList}} \tab retrieves all the codes for the given code type\cr
   \code{\link{getCodeDetail}} \tab retrieves all the details for the given code\cr
 }
