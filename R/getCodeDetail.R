@@ -24,7 +24,9 @@ getCodeDetail <- function(code_type, code) {
   out <- parseVocab(out)
 
   # for now, drop parent relation...
-  out <- out[names(out) != "ParentRelation"]
+  out <- out[!grepl("ParentRelation", names(out))]
+  # for now, drop parent relation...
+  out <- out[!grepl("ChildRelation", names(out))]
 
   # return
   out
