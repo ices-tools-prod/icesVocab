@@ -10,14 +10,19 @@
 icesVocab
 ======
 
-icesVocab implements R functions that access the [RECO POX web services](http://vocab.ices.dk/services/POX.aspx) of the [ICES (International Council for the Exploration of the Sea)](http://www.ices.dk/Pages/default.aspx) [Vocabularies](http://vocab.ices.dk/).
+icesVocab provides R functions that access the
+[RECO POX web services](http://vocab.ices.dk/services/POX.aspx) of the
+[ICES (International Council for the Exploration of the Sea)](http://www.ices.dk/Pages/default.aspx)
+[Vocabularies](http://vocab.ices.dk/) database.
 
-icesVocab is implemented as an [R](https://www.r-project.org) package and available on [GitHub](https://cran.r-project.org/package=icesVocab).
+icesVocab is implemented as an [R](https://www.r-project.org) package and
+available on [GitHub](https://cran.r-project.org/package=icesVocab).
 
 Installation
------------- 
+------------
 
-icesVocab can be installed from GitHub using the `install_github` command from the `devtools` package:
+icesVocab can be installed from GitHub using the `install_github` command from
+the `devtools` package:
 
 ```R
 devtools::install_github('ices-tools-prod/icesVocab')
@@ -47,8 +52,12 @@ ICES Vocab:
 Development
 -----------
 
-icesVocab is developed openly on [GitHub](https://github.com/ices-tools-prod/icesVocab).
-Feel free to open an [issue](https://github.com/ices-tools-prod/icesVocab/issues) there if you encounter problems or have suggestions for future versions.
+icesVocab is developed openly on
+[GitHub](https://github.com/ices-tools-prod/icesVocab).
+
+Feel free to open an
+[issue](https://github.com/ices-tools-prod/icesVocab/issues) there if you
+encounter problems or have suggestions for future versions.
 
 The current development version can be installed using:
 
