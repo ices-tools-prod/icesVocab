@@ -45,7 +45,7 @@ ICES Vocabularies RECO POX web services:
 
 [http://vocab.ices.dk/services/POX.aspx](http://vocab.ices.dk/services/POX.aspx).
 
-ICES Vocab:
+ICES Vocabularies:
 
 [http://vocab.ices.dk/](http://vocab.ices.dk/).
 
