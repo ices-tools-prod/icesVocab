@@ -41,13 +41,9 @@ library(icesVocab)
 References
 ----------
 
-ICES Vocabularies RECO POX web services:
+ICES Vocabularies database:
 
-[http://vocab.ices.dk/services/POX.aspx](http://vocab.ices.dk/services/POX.aspx).
-
-ICES Vocabularies:
-
-[http://vocab.ices.dk/](http://vocab.ices.dk/).
+[http://vocab.ices.dk/](http://vocab.ices.dk/)
 
 Development
 -----------

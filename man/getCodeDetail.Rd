@@ -2,24 +2,24 @@
 % Please edit documentation in R/getCodeDetail.R
 \name{getCodeDetail}
 \alias{getCodeDetail}
-\title{Get List of Details}
+\title{Get Details}
 \usage{
 getCodeDetail(code_type, code)
 }
 \arguments{
-\item{code_type}{the code type, e.g. SpecWoRMS}
+\item{code_type}{the code type, e.g. SpecWoRMS.}
 
-\item{code}{the code, e.g. 101170}
+\item{code}{the code, e.g. 101170.}
 }
 \value{
 A data frame.
 }
 \description{
-Retrieves all the details for the given code.
+Get details for a given code.
 }
 \examples{
-# get the details for species code 101170
-getCodeDetail("SpecWoRMS", "101170")
+# Species code 101170
+getCodeDetail("SpecWoRMS", 101170)
 
 }
 

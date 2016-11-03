@@ -1,10 +1,9 @@
-#' Get List of Code Types
+#' Get Types
 #'
-#' Retrieves all the codes types.
+#' Get all code types.
 #'
-#' @param date restrict output to code types
-#'             modified after the given date.
-#'             date should be text and in the fomat "yyyy-mm-dd", e.g. "2010-12-01"
+#' @param date restrict output to code types modified after a given date in
+#'        yyyy-mm-dd format     date should be text and in the fomat "yyyy-mm-dd", e.g. "2010-12-01"
 #'
 #' @return A data frame.
 #'

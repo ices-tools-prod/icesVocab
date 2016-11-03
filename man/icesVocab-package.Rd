@@ -7,8 +7,7 @@
 \title{ICES Vocabularies Database Web Services}
 \description{
 R interface to access the RECO POX web services of the ICES (International
-Council for the Exploration of the Sea) Vocabularies
-database <http://vocab.ices.dk/services/POX.aspx>.
+Council for the Exploration of the Sea) Vocabularies database.
 }
 \details{
 \emph{Get dataset:}
@@ -22,7 +21,6 @@ database <http://vocab.ices.dk/services/POX.aspx>.
 Colin Millar.
 }
 \references{
-ICES Vocabularies RECO POX web services:
-\url{http://vocab.ices.dk/services/POX.aspx}.
+ICES Vocabularies database: \url{http://vocab.ices.dk/}.
 }
 

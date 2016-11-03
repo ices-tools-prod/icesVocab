@@ -2,25 +2,24 @@
 % Please edit documentation in R/getCodeList.R
 \name{getCodeList}
 \alias{getCodeList}
-\title{Get List of Codes}
+\title{Get Codes}
 \usage{
 getCodeList(code_type, date = NULL)
 }
 \arguments{
-\item{code_type}{the code type, e.g. SpecWoRMS}
+\item{code_type}{the code type, e.g. SpecWoRMS.}
 
-\item{date}{restrict output to codes
-modified after the given date.
-date should be text and in the fomat "yyyy-mm-dd", e.g. "2010-12-01"}
+\item{date}{restrict output to codes modified after a given date in
+yyyy-mm-dd format, e.g. "2010-12-01".}
 }
 \value{
 A data frame.
 }
 \description{
-Retrieves all the codes for the given code type.
+Get all codes of a given code type.
 }
 \examples{
-# get the WoRMS AphiaIDs for ICES assessment species
+# Species codes
 getCodeList("SpecWoRMS")
 
 }

@@ -2,20 +2,19 @@
 % Please edit documentation in R/getCodeTypeList.R
 \name{getCodeTypeList}
 \alias{getCodeTypeList}
-\title{Get List of Code Types}
+\title{Get Types}
 \usage{
 getCodeTypeList(date = NULL)
 }
 \arguments{
-\item{date}{restrict output to code types
-modified after the given date.
-date should be text and in the fomat "yyyy-mm-dd", e.g. "2010-12-01"}
+\item{date}{restrict output to code types modified after a given date in
+yyyy-mm-dd format     date should be text and in the fomat "yyyy-mm-dd", e.g. "2010-12-01"}
 }
 \value{
 A data frame.
 }
 \description{
-Retrieves all the codes types.
+Get all code types.
 }
 \examples{
 codes <- getCodeTypeList()

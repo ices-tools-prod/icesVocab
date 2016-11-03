@@ -1,33 +1,28 @@
-#' Get List of Details
+#' Get Details
 #'
-#' Retrieves all the details for the given code.
+#' Get details for a given code.
 #'
-#' @param code_type the code type, e.g. SpecWoRMS
-#' @param code the code, e.g. 101170
+#' @param code_type the code type, e.g. SpecWoRMS.
+#' @param code the code, e.g. 101170.
 #'
 #' @return A data frame.
 #'
 #' @examples
-#' # get the details for species code 101170
-#' getCodeDetail("SpecWoRMS", "101170")
+#' # Species code 101170
+#' getCodeDetail("SpecWoRMS", 101170)
 #'
 #' @export
+
 getCodeDetail <- function(code_type, code) {
-
-  # base url
-  url <- sprintf("http://vocab.ices.dk/services/pox/GetCodeDetail/%s/%s", code_type, code)
-
-  # read and parse XML from API
-  out <- curlVocab(url = url)
-  # parse the xml text string suppplied by the Datras webservice
-  # returning a dataframe
+  # read XML string and parse to data frame
+  url <- sprintf("http://vocab.ices.dk/services/pox/GetCodeDetail/%s/%s",
+                 code_type, code)
+  out <- curlVocab(url)
   out <- parseVocab(out)
 
-  # for now, drop parent relation...
+  # for now, drop parent and child relations...
   out <- out[!grepl("ParentRelation", names(out))]
-  # for now, drop parent relation...
   out <- out[!grepl("ChildRelation", names(out))]
 
-  # return
   out
 }
