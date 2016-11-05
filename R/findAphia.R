@@ -5,8 +5,9 @@
 #' @param species the species name, either in English (default) or Latin.
 #' @param latin whether the species name is in Latin.
 #' @param regex whether to match the species name as a regular expression.
-#' @param ignore.case whether the species name is case-insensitive.
 #' @param full whether to return a data frame with all species columns.
+#'
+#' @details Species name matches are case-insensitive.
 #'
 #' @return A vector of Aphia codes (default) or a data frame if full is TRUE.
 #'
@@ -23,19 +24,15 @@
 #' findAphia("Sebastes", latin = TRUE, regex = TRUE, full = TRUE)
 #'
 #' @export
-findAphia <- function(species, latin = FALSE, regex = FALSE, ignore.case = TRUE,
-                      full = FALSE) {
+findAphia <- function(species, latin = FALSE, regex = FALSE, full = FALSE) {
   worms <- getCodeList("SpecWoRMS")
   description <- if (latin) worms$Description else worms$LongDescription
-  if (ignore.case) {
-    description <- tolower(description)
-    species <- tolower(species)
-  }
-  out <- if (regex)
-           worms$Key[unlist(lapply(species, grep, description))]
-         else
-           worms$Key[description %in% species]
-  if (full)
-    out <- worms[worms$Key %in% out,]
+  description <- tolower(description)
+  species <- tolower(species)
+  select <- if (regex)
+              unlist(lapply(species, grep, description))
+            else
+              unlist(lapply(species, match, description))
+  out <- if (full) worms[select,] else worms$Key[select]
   out
 }

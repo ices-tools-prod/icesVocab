@@ -4,8 +4,7 @@
 \alias{findAphia}
 \title{Find Aphia Code}
 \usage{
-findAphia(species, latin = FALSE, regex = FALSE, ignore.case = TRUE,
-  full = FALSE)
+findAphia(species, latin = FALSE, regex = FALSE, full = FALSE)
 }
 \arguments{
 \item{species}{the species name, either in English (default) or Latin.}
@@ -14,8 +13,6 @@ findAphia(species, latin = FALSE, regex = FALSE, ignore.case = TRUE,
 
 \item{regex}{whether to match the species name as a regular expression.}
 
-\item{ignore.case}{whether the species name is case-insensitive.}
-
 \item{full}{whether to return a data frame with all species columns.}
 }
 \value{
@@ -23,6 +20,9 @@ A vector of Aphia codes (default) or a data frame if full is TRUE.
 }
 \description{
 Look up Ahia code for a given species.
+}
+\details{
+Species name matches are case-insensitive.
 }
 \examples{
 findAphia("cod")
