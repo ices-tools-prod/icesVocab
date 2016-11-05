@@ -22,7 +22,7 @@ available.
 types <- getCodeTypeList()
 types[grep("worms", tolower(types$Description)),]
 
-This code type "SpecWoRMS" can be used when calling getCodeList()
+# This code type "SpecWoRMS" can be used when calling getCodeList()
 
 }
 \author{
