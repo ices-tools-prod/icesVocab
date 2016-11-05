@@ -10,15 +10,19 @@ R interface to access the RECO POX web services of the ICES (International
 Council for the Exploration of the Sea) Vocabularies database.
 }
 \details{
-\emph{Get dataset:}
+\emph{Get full tables:}
 \tabular{ll}{
-  \code{\link{getCodeTypeList}} \tab retrieves all the code types\cr
-  \code{\link{getCodeList}} \tab retrieves all the codes for the given code type\cr
-  \code{\link{getCodeDetail}} \tab retrieves all the details for the given code\cr
+  \code{\link{getCodeTypeList}} \tab all code code types\cr
+  \code{\link{getCodeList}}     \tab codes of a given type\cr
+  \code{\link{getCodeDetail}}   \tab details for a given code
+}
+\emph{Look up specific codes:}
+\tabular{ll}{
+  \code{\link{findAphia}} \tab species code
 }
 }
 \author{
-Colin Millar.
+Colin Millar and Arni Magnusson.
 }
 \references{
 ICES Vocabularies database: \url{http://vocab.ices.dk/}.

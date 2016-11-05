@@ -19,7 +19,7 @@ findAphia(species, latin = FALSE, regex = FALSE, full = FALSE)
 A vector of Aphia codes (default) or a data frame if full is TRUE.
 }
 \description{
-Look up Ahia code for a given species.
+Look up Aphia code for a given species.
 }
 \details{
 Species name matches are case-insensitive.
@@ -31,9 +31,12 @@ findAphia(c("cod", "haddock", "saithe"))
 findAphia("Sebastes", latin = TRUE, regex = TRUE, full = TRUE)
 
 }
+\author{
+Arni Magnusson.
+}
 \seealso{
-\code{\link{getCodeTypeList}} and \code{\link{getCodeList}} get code types
-and codes of a given type.
+\code{\link{getCodeList}} can be used to get all Aphia codes; see example on
+that help page.
 
 \code{\link{icesVocab-package}} gives an overview of the package.
 }

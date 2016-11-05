@@ -1,12 +1,20 @@
 #' Get Codes
 #'
-#' Get all codes of a given code type.
+#' Get codes of a given code type.
 #'
 #' @param code_type the code type, e.g. SpecWoRMS.
 #' @param date restrict output to codes modified after a given date in
 #'        yyyy-mm-dd format, e.g. "2010-12-01".
 #'
 #' @return A data frame.
+#'
+#' @seealso
+#' \code{\link{getCodeTypeList}} and \code{\link{getCodeDetail}} get code types
+#' and code details.
+#'
+#' \code{\link{icesVocab-package}} gives an overview of the package.
+#'
+#' @author Colin Millar.
 #'
 #' @examples
 #' # Species codes

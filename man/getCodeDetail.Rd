@@ -22,4 +22,13 @@ Get details for a given code.
 getCodeDetail("SpecWoRMS", 101170)
 
 }
+\author{
+Colin Millar.
+}
+\seealso{
+\code{\link{getCodeTypeList}} and \code{\link{getCodeList}} get code types
+and codes of a given type.
+
+\code{\link{icesVocab-package}} gives an overview of the package.
+}
 

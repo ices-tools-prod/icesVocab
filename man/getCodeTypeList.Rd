@@ -8,17 +8,30 @@ getCodeTypeList(date = NULL)
 }
 \arguments{
 \item{date}{restrict output to code types modified after a given date in
-yyyy-mm-dd format     date should be text and in the fomat "yyyy-mm-dd", e.g. "2010-12-01"}
+yyyy-mm-dd format, e.g. "2010-12-01"}
 }
 \value{
 A data frame.
 }
 \description{
-Get all code types.
+Get all code types. Mainly useful as a reminder of what code types are
+available.
 }
 \examples{
-codes <- getCodeTypeList()
-codes[grep("worms", tolower(codes$Description)),]
+# Find code type for World Register of Marine Species (WoRMS)
+types <- getCodeTypeList()
+types[grep("worms", tolower(types$Description)),]
 
+This code type "SpecWoRMS" can be used when calling getCodeList()
+
+}
+\author{
+Colin Millar.
+}
+\seealso{
+\code{\link{getCodeList}} and \code{\link{getCodeDetail}} get codes of a
+given type and code details.
+
+\code{\link{icesVocab-package}} gives an overview of the package.
 }
 

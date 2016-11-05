@@ -1,6 +1,6 @@
 #' Find Aphia Code
 #'
-#' Look up Ahia code for a given species.
+#' Look up Aphia code for a given species.
 #'
 #' @param species the species name, either in English (default) or Latin.
 #' @param latin whether the species name is in Latin.
@@ -12,10 +12,12 @@
 #' @return A vector of Aphia codes (default) or a data frame if full is TRUE.
 #'
 #' @seealso
-#' \code{\link{getCodeTypeList}} and \code{\link{getCodeList}} get code types
-#' and codes of a given type.
+#' \code{\link{getCodeList}} can be used to get all Aphia codes; see example on
+#' that help page.
 #'
 #' \code{\link{icesVocab-package}} gives an overview of the package.
+#'
+#' @author Arni Magnusson.
 #'
 #' @examples
 #' findAphia("cod")
@@ -24,6 +26,7 @@
 #' findAphia("Sebastes", latin = TRUE, regex = TRUE, full = TRUE)
 #'
 #' @export
+
 findAphia <- function(species, latin = FALSE, regex = FALSE, full = FALSE) {
   worms <- getCodeList("SpecWoRMS")
   description <- if (latin) worms$Description else worms$LongDescription

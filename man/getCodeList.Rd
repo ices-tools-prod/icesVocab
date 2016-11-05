@@ -16,11 +16,20 @@ yyyy-mm-dd format, e.g. "2010-12-01".}
 A data frame.
 }
 \description{
-Get all codes of a given code type.
+Get codes of a given code type.
 }
 \examples{
 # Species codes
 getCodeList("SpecWoRMS")
 
+}
+\author{
+Colin Millar.
+}
+\seealso{
+\code{\link{getCodeTypeList}} and \code{\link{getCodeDetail}} get code types
+and code details.
+
+\code{\link{icesVocab-package}} gives an overview of the package.
 }
 

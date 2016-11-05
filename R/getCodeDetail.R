@@ -7,6 +7,14 @@
 #'
 #' @return A data frame.
 #'
+#' @seealso
+#' \code{\link{getCodeTypeList}} and \code{\link{getCodeList}} get code types
+#' and codes of a given type.
+#'
+#' \code{\link{icesVocab-package}} gives an overview of the package.
+#'
+#' @author Colin Millar.
+#'
 #' @examples
 #' # Species code 101170
 #' getCodeDetail("SpecWoRMS", 101170)
@@ -20,7 +28,7 @@ getCodeDetail <- function(code_type, code) {
   out <- curlVocab(url)
   out <- parseVocab(out)
 
-  # for now, drop parent and child relations...
+  # for now, drop parent and child relations
   out <- out[!grepl("ParentRelation", names(out))]
   out <- out[!grepl("ChildRelation", names(out))]
 
