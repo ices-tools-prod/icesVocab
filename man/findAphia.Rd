@@ -27,8 +27,11 @@ Species name matches are case-insensitive.
 \examples{
 findAphia("cod")
 findAphia("Gadus morhua", latin = TRUE)
+
+# Multiple matches
 findAphia(c("cod", "haddock", "saithe"))
 findAphia("Sebastes", latin = TRUE, regex = TRUE, full = TRUE)
+findAphia("striped red mullet", full = TRUE)
 
 }
 \author{

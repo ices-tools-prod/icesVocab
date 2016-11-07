@@ -22,8 +22,11 @@
 #' @examples
 #' findAphia("cod")
 #' findAphia("Gadus morhua", latin = TRUE)
+#'
+#' # Multiple matches
 #' findAphia(c("cod", "haddock", "saithe"))
 #' findAphia("Sebastes", latin = TRUE, regex = TRUE, full = TRUE)
+#' findAphia("striped red mullet", full = TRUE)
 #'
 #' @export
 
@@ -32,10 +35,12 @@ findAphia <- function(species, latin = FALSE, regex = FALSE, full = FALSE) {
   description <- if (latin) worms$Description else worms$LongDescription
   description <- tolower(description)
   species <- tolower(species)
-  select <- if (regex)
-              unlist(lapply(species, grep, description))
-            else
-              unlist(lapply(species, match, description))
+
+  # Even if !regex, apply grep() to match duplicate LongDescription entries
+  # When !regex, fix the string from both ends
+  if (!regex) species <- paste0("^", species, "$")
+  select <- unlist(lapply(species, grep, description))
   out <- if (full) worms[select,] else worms$Key[select]
+
   out
 }
