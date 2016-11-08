@@ -25,21 +25,34 @@
 #'
 #' # Multiple matches
 #' findAphia(c("cod", "haddock", "saithe"))
+#'
+#' # Regular expressions
+#' findAphia("ray", regex = TRUE, full = TRUE)
 #' findAphia("Sebastes", latin = TRUE, regex = TRUE, full = TRUE)
-#' findAphia("striped red mullet", full = TRUE)
 #'
 #' @export
 
 findAphia <- function(species, latin = FALSE, regex = FALSE, full = FALSE) {
   worms <- getCodeList("SpecWoRMS")
   description <- if (latin) worms$Description else worms$LongDescription
-  description <- tolower(description)
-  species <- tolower(species)
 
   # Even if !regex, apply grep() to match duplicate LongDescription entries
-  # When !regex, fix the string from both ends
-  if (!regex) species <- paste0("^", species, "$")
-  select <- unlist(lapply(species, grep, description))
+  # Define grep function that throws error if species pattern is not found
+  grepsafe <- function(pattern, ...)
+  {
+    # When !regex, convert species to ^species$
+    out <- if (regex)
+             grep(pattern, ...)
+           else
+             grep(paste0("^", pattern, "$"), ...)
+    if (length(out) == 0)
+      stop("\nSpecies pattern '", pattern, "' not found")
+    if (length(out) > 1 && !regex)
+      message("\nSpecies pattern '", pattern, "' returned multiple matches")
+    out
+  }
+
+  select <- unlist(lapply(species, grepsafe, description, ignore.case = TRUE))
   out <- if (full) worms[select,] else worms$Key[select]
 
   out

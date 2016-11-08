@@ -30,8 +30,10 @@ findAphia("Gadus morhua", latin = TRUE)
 
 # Multiple matches
 findAphia(c("cod", "haddock", "saithe"))
+
+# Regular expressions
+findAphia("ray", regex = TRUE, full = TRUE)
 findAphia("Sebastes", latin = TRUE, regex = TRUE, full = TRUE)
-findAphia("striped red mullet", full = TRUE)
 
 }
 \author{
