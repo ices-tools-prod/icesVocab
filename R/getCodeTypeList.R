@@ -12,16 +12,18 @@
 #' \code{\link{getCodeList}} and \code{\link{getCodeDetail}} get codes of a
 #' given type and code details.
 #'
-#' \code{\link{icesVocab-package}} gives an overview of the package.
+#' \code{\link{findCodeType}} searches for a code types based on a search string.
 #'
-#' @author Colin Millar.
+#' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
 #' @examples
 #' # Find code type for World Register of Marine Species (WoRMS)
 #' types <- getCodeTypeList()
 #' types[grep("worms", tolower(types$Description)),]
 #'
-#' # This code type "SpecWoRMS" can be used when calling getCodeList()
+#' findCodeType("worms", full = TRUE)
+#'
+#' # The code type "SpecWoRMS" can be used when calling getCodeList()
 #'
 #' @export
 
@@ -35,10 +37,9 @@ getCodeTypeList <- function(date = NULL) {
     url <- sprintf(paste0(url, "/%s"), date)
   }
 
-  # read and parse XML from API
-  out <- curlVocab(url = url)
-  # parse the xml text string suppplied by the Datras webservice
-  # returning a dataframe
+  # read url contents
+  out <- readVocab(url)
+  # parse the text string returning a dataframe
   out <- parseVocab(out)
 
   # return

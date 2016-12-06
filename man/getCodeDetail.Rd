@@ -18,12 +18,17 @@ A data frame.
 Get details for a given code.
 }
 \examples{
-# Species code 101170
+# Species code 101170 - Myxine glutinosa
 getCodeDetail("SpecWoRMS", 101170)
 
-}
-\author{
-Colin Millar.
+# find details of Haddock using the aphia ID
+findCode("species", "haddock", full = TRUE)
+
+getCodeDetail("SpecWoRMS", 126437)
+
+# get info for had-43
+getCodeDetail("ICES_StockCode", "had-34")
+
 }
 \seealso{
 \code{\link{getCodeTypeList}} and \code{\link{getCodeList}} get code types
