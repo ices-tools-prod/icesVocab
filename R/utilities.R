@@ -12,7 +12,7 @@ readVocab <- function(url) {
     } else if (os.type("unix") & Sys.which("wget") != "") {
       download.file(url, destfile = tmp, quiet = TRUE, method = "wget")
     } else if (os.type("unix") & Sys.which("curl") != "") {
-      download.file(url, destfile = tmp, quiet = TRUE, method = "wget")
+      download.file(url, destfile = tmp, quiet = TRUE, method = "curl")
     } else {
       127
     }
