@@ -19,6 +19,7 @@ repos:
 r_packages:
   - rmarkdown
   - covr
+  - XML
 
 cache: packages
 
