@@ -21,6 +21,8 @@
 #' findCodeType("aphia", full = TRUE)
 #' getCodeList("SpecWoRMS")
 #'
+#' findAphia("cod", full = TRUE)
+#'
 #' @export
 
 getCodeList <- function(code_type, date = NULL) {

@@ -23,6 +23,8 @@ Get codes of a given code type.
 findCodeType("aphia", full = TRUE)
 getCodeList("SpecWoRMS")
 
+findAphia("cod", full = TRUE)
+
 }
 \seealso{
 \code{\link{getCodeTypeList}} and \code{\link{getCodeDetail}} get code types
