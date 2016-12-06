@@ -1,21 +1,13 @@
 
-#' @importFrom utils download.file
+
 readVocab <- function(url) {
-  # create file name
-  tmp <- tempfile()
-  # download file
-  if (os.type("windows")) {
-    download.file(url, destfile = tmp, quiet = TRUE)
-  } else if (os.type("unix")) {
-    download.file(url, destfile = tmp, quiet = TRUE, method = "wget")
-  } else if (os.type("other")) {
-    warning("Untested downloading in this platform")
-    download.file(url, destfile = tmp, quiet = TRUE)
-  }
-  on.exit(unlink(tmp))
+
+  # connect to url
+  con <- url(url)
+  on.exit(close(con))
 
   # scan lines
-  scan(tmp, what = "", sep = "\n", quiet = TRUE)
+  scan(con, what = "", sep = "\n", quiet = TRUE)
 }
 
 
