@@ -22,12 +22,16 @@ available.
 types <- getCodeTypeList()
 types[grep("worms", tolower(types$Description)),]
 
-# This code type "SpecWoRMS" can be used when calling getCodeList()
+findCodeType("worms", full = TRUE)
+
+# The code type "SpecWoRMS" can be used when calling getCodeList()
 
 }
 \seealso{
 \code{\link{getCodeList}} and \code{\link{getCodeDetail}} get codes of a
 given type and code details.
+
+\code{\link{findCodeType}} searches for a code types based on a search string.
 
 \code{\link{icesVocab-package}} gives an overview of the package.
 }
