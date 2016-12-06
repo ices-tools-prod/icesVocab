@@ -21,9 +21,12 @@ Get details for a given code.
 # Species code 101170
 getCodeDetail("SpecWoRMS", 101170)
 
-}
-\author{
-Colin Millar.
+# find details of Haddock using the aphia ID
+findCodeType("aphia", full = TRUE)
+findCode("species", "haddock", full = TRUE)
+
+findAphia("cod", full = TRUE)
+
 }
 \seealso{
 \code{\link{getCodeTypeList}} and \code{\link{getCodeList}} get code types

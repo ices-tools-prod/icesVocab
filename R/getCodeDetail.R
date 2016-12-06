@@ -13,19 +13,27 @@
 #'
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
-#' @author Colin Millar.
-#'
 #' @examples
 #' # Species code 101170
 #' getCodeDetail("SpecWoRMS", 101170)
 #'
+#' # find details of Haddock using the aphia ID
+#' findCodeType("aphia", full = TRUE)
+#' findCode("species", "haddock", full = TRUE)
+#'
+#' findAphia("cod", full = TRUE)
+#'
 #' @export
 
 getCodeDetail <- function(code_type, code) {
-  # read XML string and parse to data frame
+
+  # form url
   url <- sprintf("http://vocab.ices.dk/services/pox/GetCodeDetail/%s/%s",
                  code_type, code)
-  out <- curlVocab(url)
+
+  # read url contents
+  out <- readVocab(url)
+  # parse the text string returning a dataframe
   out <- parseVocab(out)
 
   # for now, drop parent and child relations

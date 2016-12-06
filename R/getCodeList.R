@@ -12,13 +12,16 @@
 #' \code{\link{getCodeTypeList}} and \code{\link{getCodeDetail}} get code types
 #' and code details.
 #'
+#' \code{\link{findCodeType}} and \code{\link{findAphia}} provide support for searching the code type and code lists.
+#'
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
-#' @author Colin Millar.
-#'
 #' @examples
-#' # Species codes
+#' # Aphia Species codes
+#' findCodeType("aphia", full = TRUE)
 #' getCodeList("SpecWoRMS")
+#'
+#' findAphia("cod", full = TRUE)
 #'
 #' @export
 
@@ -32,8 +35,9 @@ getCodeList <- function(code_type, date = NULL) {
     url <- sprintf(paste0(url, "/%s"), date)
   }
 
-  # read XML string and parse to data frame
-  out <- curlVocab(url)
+  # read url contents
+  out <- readVocab(url)
+  # parse the text string returning a dataframe
   out <- parseVocab(out)
 
   out
