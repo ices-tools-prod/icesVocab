@@ -1,15 +1,23 @@
-#' @importFrom RCurl basicTextGatherer
-#' @importFrom RCurl curlPerform
-curlVocab <- function(url) {
-  # read only XML table and return as string
-  reader <- basicTextGatherer()
-  curlPerform(url = url,
-              httpheader = c('Content-Type' = "text/xml; charset=utf-8", SOAPAction=""),
-              writefunction = reader$update,
-              verbose = FALSE)
-  # return
-  reader$value()
+
+#' @importFrom utils download.file
+readVocab <- function(url) {
+  # create file name
+  tmp <- tempfile()
+  # download file
+  if (os.type("windows")) {
+    download.file(url, destfile = tmp, quiet = TRUE)
+  } else if (os.type("unix")) {
+    download.file(url, destfile = tmp, quiet = TRUE, method = "wget")
+  } else if (os.type("other")) {
+    warning("Untested downloading in this platform")
+    download.file(url, destfile = tmp, quiet = TRUE)
+  }
+  on.exit(unlink(tmp))
+
+  # scan lines
+  scan(tmp, what = "", sep = "\n", quiet = TRUE)
 }
+
 
 #' @importFrom XML xmlParse
 #' @importFrom XML xmlRoot
@@ -48,10 +56,57 @@ parseVocab <- function(x) {
   x
 }
 
+#' @importFrom XML xmlToList
+parseVocabDetail <- function(x) {
+  # parse the xml text string suppplied by the Datras webservice
+  # returning a dataframe
+  x <- xmlParse(x)
+
+  # convet to list
+  x <- xmlToList(x)[[1]]
+
+  # get top row
+  todf <- function(y) {
+    y[sapply(y, is.null)] <- NA
+    as.data.frame(y)
+  }
+  header <- todf(x[1:5])
+
+  # get parents
+  parents <- x[names(x) == "ParentRelation"]
+  parent_code <-
+    do.call(rbind,
+      lapply(unname(parents),
+        function(y) todf(y$Code)))
+  parent_code_type <-
+    do.call(rbind,
+            lapply(unname(parents),
+                   function(y) todf(y$CodeType)))
+
+  # get children
+  children <- x[names(x) == "ChildRelation"]
+  child_code <-
+    do.call(rbind,
+            lapply(unname(children),
+                   function(y) todf(y$Code)))
+  child_code_type <-
+    do.call(rbind,
+            lapply(unname(children),
+                   function(y) todf(y$CodeType)))
+
+  # restructure
+  out <- list(detail = header,
+              parents = list(code_types = parent_code_type, codes = parent_code),
+              children = list(code_types = child_code_type, codes = child_code))
+
+  # return
+  out
+}
+
 
 checkVocabWebserviceOK <- function() {
   # return TRUE if webservice server is good, FALSE otherwise
-  out <- curlVocab(url = "http://vocab.ices.dk/services/pox/GetCodeDetail/SpecWoRMS/101170")
+  out <- readVocab(url = "http://vocab.ices.dk/services/pox/GetCodeDetail/SpecWoRMS/101170")
 
   # Check the server is not down by insepcting the XML response for internal server error message.
   if (grepl("Internal Server Error", out)) {
@@ -104,4 +159,15 @@ simplify <- function(x) {
     }
   }
   x
+}
+
+# returns TRUE if correct operating system is passed as an argument
+os.type <- function (type = c("unix", "windows", "other"))
+{
+  type <- match.arg(type)
+  if (type %in% c("windows", "unix")) {
+    .Platform$OS.type == type
+  } else {
+    TRUE
+  }
 }

@@ -45,6 +45,10 @@ ICES Vocabularies database:
 
 [http://vocab.ices.dk/](http://vocab.ices.dk/)
 
+ICES Vocabularies POX web service definition:
+
+[http://vocab.ices.dk/services/POX.aspx](http://vocab.ices.dk/services/POX.aspx)
+
 Development
 -----------
 

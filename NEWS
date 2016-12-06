@@ -1,0 +1,22 @@
+--------------------------------------------------------------------------------
+icesVocab 1.1-0 (2016-12-08)
+--------------------------------------------------------------------------------
+o Added function findAphia() to look up species codes.
+
+o Added function findCode() to look up codes given a code type.
+
+o Added function findCodeType() to look up code types.
+
+o Improved XML parsing, so both leading and trailing white space is removed.
+
+o Improved XML parsing, so "" and "NA" is converted to NA.
+
+o Improved XML parsing of code details so that child and parent relations are returned.
+
+o Improved url reading to avoid the use of RCurl.
+
+
+--------------------------------------------------------------------------------
+icesVocab 1.0-0 (2016-09-15)
+--------------------------------------------------------------------------------
+o Initial release.
