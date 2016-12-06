@@ -18,10 +18,9 @@
 #' getCodeDetail("SpecWoRMS", 101170)
 #'
 #' # find details of Haddock using the aphia ID
-#' findCodeType("aphia", full = TRUE)
 #' findCode("species", "haddock", full = TRUE)
 #'
-#' findAphia("cod", full = TRUE)
+#' getCodeDetail("SpecWoRMS", 126437)
 #'
 #' @export
 
