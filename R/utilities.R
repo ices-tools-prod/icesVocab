@@ -56,7 +56,7 @@ parseVocab <- function(x) {
   x
 }
 
-#' @importFrom XML xlmToList
+#' @importFrom XML xmlToList
 parseVocabDetail <- function(x) {
   # parse the xml text string suppplied by the Datras webservice
   # returning a dataframe
