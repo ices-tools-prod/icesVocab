@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-icesVocab 1.1-1 (2016-12-08)
+icesVocab 1.1-2 (2016-12-08)
 --------------------------------------------------------------------------------
 o Fixed mistake in using wget method in download.file.  Now if download.file is
   unsuccessful, the slower url() function will be used in place.
