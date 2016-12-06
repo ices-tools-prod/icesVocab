@@ -4,11 +4,12 @@ warnings_are_errors: false
 
 os:
   - linux
+  - osx
 
 language: r
 r:
-  - oldrel
   - release
+  - devel
 
 sudo: false
 
@@ -17,6 +18,7 @@ repos:
 
 r_packages:
   - rmarkdown
+  - covr
 
 cache: packages
 
@@ -25,9 +27,5 @@ notifications:
     on_success: change
     on_failure: change
 
-r_github_packages:
-  - jimhester/covr
-
 after_success:
   - Rscript -e 'library(covr);codecov()'
-  
