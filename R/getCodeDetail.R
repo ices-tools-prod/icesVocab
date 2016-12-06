@@ -33,11 +33,7 @@ getCodeDetail <- function(code_type, code) {
   # read url contents
   out <- readVocab(url)
   # parse the text string returning a dataframe
-  out <- parseVocab(out)
-
-  # for now, drop parent and child relations
-  out <- out[!grepl("ParentRelation", names(out))]
-  out <- out[!grepl("ChildRelation", names(out))]
+  out <- parseVocabDetail(out)
 
   out
 }
