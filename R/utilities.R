@@ -56,6 +56,53 @@ parseVocab <- function(x) {
   x
 }
 
+#' @importFrom XML xmlToList
+parseVocabDetail <- function(x) {
+  # parse the xml text string suppplied by the Datras webservice
+  # returning a dataframe
+  x <- xmlParse(x)
+
+  # convet to list
+  x <- xmlToList(x)[[1]]
+
+  # get top row
+  todf <- function(y) {
+    y[sapply(y, is.null)] <- NA
+    as.data.frame(y)
+  }
+  header <- todf(x[1:5])
+
+  # get parents
+  parents <- x[names(x) == "ParentRelation"]
+  parent_code <-
+    do.call(rbind,
+      lapply(unname(parents),
+        function(y) todf(y$Code)))
+  parent_code_type <-
+    do.call(rbind,
+            lapply(unname(parents),
+                   function(y) todf(y$CodeType)))
+
+  # get children
+  children <- x[names(x) == "ChildRelation"]
+  child_code <-
+    do.call(rbind,
+            lapply(unname(children),
+                   function(y) todf(y$Code)))
+  child_code_type <-
+    do.call(rbind,
+            lapply(unname(children),
+                   function(y) todf(y$CodeType)))
+
+  # restructure
+  out <- list(detail = header,
+              parents = list(code_types = parent_code_type, codes = parent_code),
+              children = list(code_types = child_code_type, codes = child_code))
+
+  # return
+  out
+}
+
 
 checkVocabWebserviceOK <- function() {
   # return TRUE if webservice server is good, FALSE otherwise
