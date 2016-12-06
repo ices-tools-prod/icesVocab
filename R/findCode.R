@@ -62,7 +62,11 @@ findCode <- function(code_type, code, regex = TRUE, full = FALSE) {
   names(codes) <- type
 
   # drop empty types
-  codes <- codes[sapply(codes, length) > 0]
+  if (full) {
+    codes <- codes[sapply(codes, nrow) > 0]
+  } else {
+    codes <- codes[sapply(codes, length) > 0]
+  }
 
   # return
   codes
