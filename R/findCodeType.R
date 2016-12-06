@@ -33,7 +33,10 @@ findCodeType <- function(code, date = NULL, regex = TRUE, full = FALSE)
   # apply filters
   code <- tolower(code)
   if (!regex) code <- paste0("^", code, "$")
-  select <- unlist(lapply(code, grep, tolower(types$Description)))
+  select <- c(unlist(lapply(code, grep, tolower(types$LongDescription))),
+              unlist(lapply(code, grep, tolower(types$Description))),
+              unlist(lapply(code, grep, tolower(types$Key))))
+  select <- sort(unique(select))
   types <- types[select,]
 
   # return
