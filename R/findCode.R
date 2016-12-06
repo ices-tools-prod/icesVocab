@@ -40,13 +40,14 @@ findCode <- function(code_type, code, regex = TRUE, full = FALSE) {
   codes <- lapply(type, getCodeList)
 
   # apply filters (to each list element)
-  code <- tolower(code)
+  code <- tolower(as.character(code))
   if (!regex) code <- paste0("^", code, "$")
   codes <-
     lapply(codes,
       function(x) {
         select <- c(unlist(lapply(code, grep, tolower(x$LongDescription))),
-                    unlist(lapply(code, grep, tolower(x$Description))))
+                    unlist(lapply(code, grep, tolower(x$Description))),
+                    unlist(lapply(code, grep, tolower(x$Key))))
         select <- sort(unique(select))
         x <- x[select,]
 
@@ -61,7 +62,7 @@ findCode <- function(code_type, code, regex = TRUE, full = FALSE) {
   names(codes) <- type
 
   # drop empty types
-  codes <- codes[sapply(codes, nrow) > 0]
+  codes <- codes[sapply(codes, length) > 0]
 
   # return
   codes
