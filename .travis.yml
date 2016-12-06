@@ -2,19 +2,15 @@
 
 warnings_are_errors: false
 
-matrix:
-  include:
-    - os: linux
-    - os: osx
-      osx_image: xcode7.2
-    - os: osx
-      osx_image: xcode7.2
-    - os: osx
-      osx_image: beta-xcode6.1
+os:
+  - linux
+  - osx
+
 
 language: r
 r:
   - release
+  - devel
 
 sudo: false
 
