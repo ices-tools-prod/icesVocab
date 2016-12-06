@@ -19,13 +19,16 @@ A data frame.
 Get codes of a given code type.
 }
 \examples{
-# Species codes
+# Aphia Species codes
+findCodeType("aphia", full = TRUE)
 getCodeList("SpecWoRMS")
 
 }
 \seealso{
 \code{\link{getCodeTypeList}} and \code{\link{getCodeDetail}} get code types
 and code details.
+
+\code{\link{findCodeType}} and \code{\link{findAphia}} provide support for searching the code type and code lists.
 
 \code{\link{icesVocab-package}} gives an overview of the package.
 }
