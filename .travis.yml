@@ -19,6 +19,8 @@ repos:
 r_packages:
   - rmarkdown
   - covr
+  - XML
+  - testthat
 
 cache: packages
 
