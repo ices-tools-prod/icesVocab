@@ -60,52 +60,39 @@ parseVocab <- function(x) {
 parseVocabDetail <- function(x) {
   # parse the xml text string suppplied by the Datras webservice
   # returning a dataframe
-  x <- out
   x <- xmlParse(x)
 
   # convet to list
   x <- xmlToList(x)[[1]]
 
   # get top row
-  header <- as.data.frame(x[1:5])
+  todf <- function(y) {
+    y[sapply(y, is.null)] <- NA
+    as.data.frame(y)
+  }
+  header <- todf(x[1:5])
 
   # get parents
   parents <- x[names(x) == "ParentRelation"]
   parent_code <-
     do.call(rbind,
       lapply(unname(parents),
-        function(y) {
-          code <- y$Code
-          code[sapply(code, is.null)] <- NA
-          as.data.frame(code)
-        }))
+        function(y) todf(y$Code)))
   parent_code_type <-
     do.call(rbind,
             lapply(unname(parents),
-                   function(y) {
-                     code <- y$CodeType
-                     code[sapply(code, is.null)] <- NA
-                     as.data.frame(code)
-                   }))
+                   function(y) todf(y$CodeType)))
 
   # get children
   children <- x[names(x) == "ChildRelation"]
   child_code <-
     do.call(rbind,
             lapply(unname(children),
-                   function(y) {
-                     code <- y$Code
-                     code[sapply(code, is.null)] <- NA
-                     as.data.frame(code)
-                   }))
+                   function(y) todf(y$Code)))
   child_code_type <-
     do.call(rbind,
             lapply(unname(children),
-                   function(y) {
-                     code <- y$CodeType
-                     code[sapply(code, is.null)] <- NA
-                     as.data.frame(code)
-                   }))
+                   function(y) todf(y$CodeType)))
 
   # restructure
   out <- list(detail = header,

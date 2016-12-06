@@ -14,7 +14,7 @@
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
 #' @examples
-#' # Species code 101170
+#' # Species code 101170 - Myxine glutinosa
 #' getCodeDetail("SpecWoRMS", 101170)
 #'
 #' # find details of Haddock using the aphia ID
@@ -22,9 +22,13 @@
 #'
 #' getCodeDetail("SpecWoRMS", 126437)
 #'
+#' # get info for had-43
+#' getCodeDetail("ICES_StockCode", "had-34")
+#'
 #' @export
 
 getCodeDetail <- function(code_type, code) {
+  message("The output from this function is developing.  please do not rely on the current output format")
 
   # form url
   url <- sprintf("http://vocab.ices.dk/services/pox/GetCodeDetail/%s/%s",
