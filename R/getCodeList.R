@@ -19,7 +19,8 @@
 #' @examples
 #' # Aphia Species codes
 #' findCodeType("aphia", full = TRUE)
-#' getCodeList("SpecWoRMS")
+#' codes <- getCodeList("SpecWoRMS")
+#' head(codes)
 #'
 #' findAphia("cod", full = TRUE)
 #'
