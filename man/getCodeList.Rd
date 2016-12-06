@@ -23,9 +23,6 @@ Get codes of a given code type.
 getCodeList("SpecWoRMS")
 
 }
-\author{
-Colin Millar.
-}
 \seealso{
 \code{\link{getCodeTypeList}} and \code{\link{getCodeDetail}} get code types
 and code details.

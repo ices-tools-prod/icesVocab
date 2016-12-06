@@ -25,9 +25,6 @@ types[grep("worms", tolower(types$Description)),]
 # This code type "SpecWoRMS" can be used when calling getCodeList()
 
 }
-\author{
-Colin Millar.
-}
 \seealso{
 \code{\link{getCodeList}} and \code{\link{getCodeDetail}} get codes of a
 given type and code details.

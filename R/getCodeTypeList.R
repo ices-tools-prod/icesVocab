@@ -14,8 +14,6 @@
 #'
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
-#' @author Colin Millar.
-#'
 #' @examples
 #' # Find code type for World Register of Marine Species (WoRMS)
 #' types <- getCodeTypeList()
@@ -35,10 +33,9 @@ getCodeTypeList <- function(date = NULL) {
     url <- sprintf(paste0(url, "/%s"), date)
   }
 
-  # read and parse XML from API
-  out <- curlVocab(url = url)
-  # parse the xml text string suppplied by the Datras webservice
-  # returning a dataframe
+  # read url contents
+  out <- readVocab(url)
+  # parse the text string returning a dataframe
   out <- parseVocab(out)
 
   # return
