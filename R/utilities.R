@@ -1,15 +1,23 @@
-#' @importFrom RCurl basicTextGatherer
-#' @importFrom RCurl curlPerform
-curlVocab <- function(url) {
-  # read only XML table and return as string
-  reader <- basicTextGatherer()
-  curlPerform(url = url,
-              httpheader = c('Content-Type' = "text/xml; charset=utf-8", SOAPAction=""),
-              writefunction = reader$update,
-              verbose = FALSE)
-  # return
-  reader$value()
+
+#' @importFrom utils download.file
+readVocab <- function(url) {
+  # create file name
+  tmp <- tempfile()
+  # download file
+  if (os.type("windows")) {
+    download.file(url, destfile = tmp, quiet = TRUE)
+  } else if (os.type("unix")) {
+    download.file(url, destfile = tmp, quiet = TRUE, method = "wget")
+  } else if (os.type("other")) {
+    warning("Untested downloading in this platform")
+    download.file(url, destfile = tmp, quiet = TRUE)
+  }
+  on.exit(unlink(tmp))
+
+  # scan lines
+  scan(tmp, what = "", sep = "\n", quiet = TRUE)
 }
+
 
 #' @importFrom XML xmlParse
 #' @importFrom XML xmlRoot
@@ -104,4 +112,15 @@ simplify <- function(x) {
     }
   }
   x
+}
+
+# returns TRUE if correct operating system is passed as an argument
+os.type <- function (type = c("unix", "windows", "other"))
+{
+  type <- match.arg(type)
+  if (type %in% c("windows", "unix")) {
+    .Platform$OS.type == type
+  } else {
+    TRUE
+  }
 }
