@@ -36,4 +36,3 @@ and codes of a given type.
 
 \code{\link{icesVocab-package}} gives an overview of the package.
 }
-

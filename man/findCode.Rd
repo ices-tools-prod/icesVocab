@@ -41,4 +41,3 @@ that help page.
 
 \code{\link{icesVocab-package}} gives an overview of the package.
 }
-
