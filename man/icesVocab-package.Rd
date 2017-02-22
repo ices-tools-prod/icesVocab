@@ -4,10 +4,10 @@
 \name{icesVocab-package}
 \alias{icesVocab-package}
 \alias{icesVocab}
-\title{ICES Vocabularies Database Web Services}
+\title{Vocabularies Database Web Services}
 \description{
-R interface to access the RECO POX web services of the ICES (International
-Council for the Exploration of the Sea) Vocabularies database.
+R interface to access the web services of the ICES Vocabularies database of
+reference codes.
 }
 \details{
 \emph{Get full tables:}
@@ -22,7 +22,9 @@ Council for the Exploration of the Sea) Vocabularies database.
 }
 }
 \references{
-ICES Vocabularies database: \url{http://vocab.ices.dk/}.
+ICES Vocabularies database: \url{http://vocab.ices.dk}.
+
+ICES Vocabularies web services: \url{http://vocab.ices.dk/services/POX.aspx}.
 }
 \author{
 Colin Millar and Arni Magnusson.

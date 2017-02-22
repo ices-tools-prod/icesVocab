@@ -5,15 +5,15 @@
 [![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/icesVocab)](https://cran.r-project.org/package=icesVocab)
 [![License](https://img.shields.io/badge/license-GPL%20(%3E%3D%202)-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-[<img align="right" alt="ICES Logo" width="17%" height="17%" src="http://www.ices.dk/_layouts/15/1033/images/icesimg/iceslogo.png">](http://www.ices.dk/Pages/default.aspx)
+[<img align="right" alt="ICES Logo" width="17%" height="17%" src="http://ices.dk/_layouts/15/1033/images/icesimg/iceslogo.png">](http://ices.dk)
 
 icesVocab
-======
+=========
 
 icesVocab provides R functions that access the
-[RECO POX web services](http://vocab.ices.dk/services/POX.aspx) of the
-[ICES (International Council for the Exploration of the Sea)](http://www.ices.dk/Pages/default.aspx)
-[Vocabularies](http://vocab.ices.dk/) database.
+[web services](http://vocab.ices.dk/services/POX.aspx) of the
+[ICES](http://ices.dk) [Vocabularies](http://vocab.ices.dk) database of
+reference codes.
 
 icesVocab is implemented as an [R](https://www.r-project.org) package and
 available on [GitHub](https://cran.r-project.org/package=icesVocab).
@@ -42,12 +42,10 @@ References
 ----------
 
 ICES Vocabularies database:
+http://vocab.ices.dk
 
-[http://vocab.ices.dk/](http://vocab.ices.dk/)
-
-ICES Vocabularies POX web service definition:
-
-[http://vocab.ices.dk/services/POX.aspx](http://vocab.ices.dk/services/POX.aspx)
+ICES Vocabularies web services:
+http://vocab.ices.dk/services/POX.aspx
 
 Development
 -----------
