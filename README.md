@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/ices-tools-prod/icesVocab.svg?branch=master)](https://travis-ci.org/ices-tools-prod/icesVocab)
 [![codecov](https://codecov.io/gh/ices-tools-prod/icesVocab/branch/master/graph/badge.svg)](https://codecov.io/gh/ices-tools-prod/icesVocab)
 [![GitHub release](https://img.shields.io/github/release/ices-tools-prod/icesVocab.svg?maxAge=2592001)]()
-[![CRAN Status](http://www.r-pkg.org/badges/version/icesVocab)](https://cran.r-project.org/package=icesVocab)
+[![CRAN Status](http://r-pkg.org/badges/version/icesVocab)](https://cran.r-project.org/package=icesVocab)
 [![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/icesVocab)](https://cran.r-project.org/package=icesVocab)
 [![License](https://img.shields.io/badge/license-GPL%20(%3E%3D%202)-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
