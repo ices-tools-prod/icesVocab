@@ -17,16 +17,15 @@ icesVocab provides R functions that access the
 [Vocabularies](http://vocab.ices.dk/) database.
 
 icesVocab is implemented as an [R](https://www.r-project.org) package and
-available on [GitHub](https://cran.r-project.org/package=icesVocab).
+available on [CRAN](https://cran.r-project.org/package=icesVocab).
 
 Installation
 ------------
 
-icesVocab can be installed from GitHub using the `install_github` command from
-the `devtools` package:
+icesVocab can be installed from CRAN using the `install.packages` command:
 
 ```R
-devtools::install_github('ices-tools-prod/icesVocab')
+install.packages("icesVocab")
 ```
 
 Usage
@@ -63,5 +62,6 @@ encounter problems or have suggestions for future versions.
 The current development version can be installed using:
 
 ```R
-devtools::install_github('ices-tools-prod/icesVocab')
+library(devtools)
+install_github("ices-tools-prod/icesVocab")
 ```
