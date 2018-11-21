@@ -124,7 +124,7 @@ parseVocabDetail <- function(x) {
 
 checkVocabWebserviceOK <- function() {
   # return TRUE if webservice server is good, FALSE otherwise
-  out <- readVocab(url = "http://vocab.ices.dk/services/pox/GetCodeDetail/SpecWoRMS/101170")
+  out <- readVocab(url = "https://vocab.ices.dk/services/pox/GetCodeDetail/SpecWoRMS/101170")
 
   # Check the server is not down by insepcting the XML response for internal server error message.
   if (grepl("Internal Server Error", out)) {

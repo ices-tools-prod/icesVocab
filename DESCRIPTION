@@ -1,14 +1,18 @@
 Package: icesVocab
-Version: 1.1-2
-Date: 2016-12-08
+Version: 1.1-3
+Date: 2018-11-21
 Title: Vocabularies Database Web Services
 Authors@R: c(person("Colin", "Millar", role=c("aut","cre"), email="colin.millar@ices.dk"),
              person("Arni", "Magnusson", role="aut"))
 Imports: utils,
          XML
-Suggests: testthat
-Description: R interface to access the web services of the ICES Vocabularies
-             database of reference codes.
+Suggests: testthat,
+    knitr,
+    rmarkdown
+Description: R interface to access the RECO POX web services of the ICES (International
+             Council for the Exploration of the Sea) Vocabularies database <https://vocab.ices.dk/services/POX.aspx>.
 License: GPL (>= 2)
-URL: http://vocab.ices.dk
-RoxygenNote: 6.0.1
+URL: https://vocab.ices.dk/services/POX.aspx
+RoxygenNote: 6.1.0.9000
+VignetteBuilder: knitr
+Encoding: UTF-8

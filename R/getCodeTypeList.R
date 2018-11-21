@@ -30,7 +30,7 @@
 getCodeTypeList <- function(date = NULL) {
 
   # base url
-  url <- "http://vocab.ices.dk/services/pox/GetCodeTypeList"
+  url <- "https://vocab.ices.dk/services/pox/GetCodeTypeList"
 
   # if date supplied return list of code types modified after the given date
   if (!is.null(date)) {

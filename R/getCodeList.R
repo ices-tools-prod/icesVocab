@@ -28,7 +28,7 @@
 
 getCodeList <- function(code_type, date = NULL) {
   # base url
-  url <- sprintf("http://vocab.ices.dk/services/pox/GetCodeList/%s",
+  url <- sprintf("https://vocab.ices.dk/services/pox/GetCodeList/%s",
                  code_type)
 
   # append modified-after-date filter

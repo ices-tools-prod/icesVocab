@@ -1,8 +1,9 @@
 [![Build Status](https://travis-ci.org/ices-tools-prod/icesVocab.svg?branch=master)](https://travis-ci.org/ices-tools-prod/icesVocab)
 [![codecov](https://codecov.io/gh/ices-tools-prod/icesVocab/branch/master/graph/badge.svg)](https://codecov.io/gh/ices-tools-prod/icesVocab)
 [![GitHub release](https://img.shields.io/github/release/ices-tools-prod/icesVocab.svg?maxAge=2592001)]()
-[![CRAN Status](http://r-pkg.org/badges/version/icesVocab)](https://cran.r-project.org/package=icesVocab)
-[![CRAN Downloads](http://cranlogs.r-pkg.org/badges/icesVocab)](https://cran.r-project.org/package=icesVocab)
+[![CRAN Status](http://www.r-pkg.org/badges/version/icesVocab)](https://cran.r-project.org/package=icesVocab)
+[![CRAN Monthly](http://cranlogs.r-pkg.org/badges/icesVocab)](https://cran.r-project.org/package=icesVocab)
+[![CRAN Total](http://cranlogs.r-pkg.org/badges/grand-total/icesVocab)](https://cran.r-project.org/package=icesVocab)
 [![License](https://img.shields.io/badge/license-GPL%20(%3E%3D%202)-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 [<img align="right" alt="ICES Logo" width="17%" height="17%" src="http://ices.dk/_layouts/15/1033/images/icesimg/iceslogo.png">](http://ices.dk)
@@ -16,16 +17,15 @@ icesVocab provides R functions that access the
 reference codes.
 
 icesVocab is implemented as an [R](https://www.r-project.org) package and
-available on [GitHub](https://cran.r-project.org/package=icesVocab).
+available on [CRAN](https://cran.r-project.org/package=icesVocab).
 
 Installation
 ------------
 
-icesVocab can be installed from GitHub using the `install_github` command from
-the `devtools` package:
+icesVocab can be installed from CRAN using the `install.packages` command:
 
 ```R
-devtools::install_github('ices-tools-prod/icesVocab')
+install.packages("icesVocab")
 ```
 
 Usage
@@ -60,5 +60,6 @@ encounter problems or have suggestions for future versions.
 The current development version can be installed using:
 
 ```R
-devtools::install_github('ices-tools-prod/icesVocab')
+library(devtools)
+install_github("ices-tools-prod/icesVocab")
 ```
