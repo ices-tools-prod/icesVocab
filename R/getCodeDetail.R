@@ -31,7 +31,7 @@ getCodeDetail <- function(code_type, code) {
   message("The output from this function is developing.  please do not rely on the current output format")
 
   # form url
-  url <- sprintf("http://vocab.ices.dk/services/pox/GetCodeDetail/%s/%s",
+  url <- sprintf("https://vocab.ices.dk/services/pox/GetCodeDetail/%s/%s",
                  code_type, code)
 
   # read url contents

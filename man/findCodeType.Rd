@@ -35,4 +35,3 @@ findCodeType("DATRAS", full = TRUE, date = "2010-01-01")
 
 \code{\link{icesVocab-package}} gives an overview of the package.
 }
-
