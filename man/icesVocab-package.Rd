@@ -2,8 +2,8 @@
 % Please edit documentation in R/icesVocab-package.R
 \docType{package}
 \name{icesVocab-package}
-\alias{icesVocab}
 \alias{icesVocab-package}
+\alias{icesVocab}
 \title{ICES Vocabularies Database Web Services}
 \description{
 R interface to access the RECO POX web services of the ICES (International
@@ -21,10 +21,9 @@ Council for the Exploration of the Sea) Vocabularies database.
   \code{\link{findAphia}} \tab species code
 }
 }
-\author{
-Colin Millar and Arni Magnusson.
-}
 \references{
 ICES Vocabularies database: \url{http://vocab.ices.dk/}.
 }
-
+\author{
+Colin Millar and Arni Magnusson.
+}

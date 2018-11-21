@@ -36,13 +36,12 @@ findAphia("ray", regex = TRUE, full = TRUE)
 findAphia("Sebastes", latin = TRUE, regex = TRUE, full = TRUE)
 
 }
-\author{
-Arni Magnusson.
-}
 \seealso{
 \code{\link{getCodeList}} can be used to get all Aphia codes; see example on
 that help page.
 
 \code{\link{icesVocab-package}} gives an overview of the package.
 }
-
+\author{
+Arni Magnusson.
+}
