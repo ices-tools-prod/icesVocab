@@ -1,4 +1,11 @@
 --------------------------------------------------------------------------------
+icesVocab 1.1-3 (2019-01-11)
+--------------------------------------------------------------------------------
+o Switched to using https route to webservice to fix errors introduced by http
+  redirection from http to https on the web server for systems unable to handle
+  http redirection.
+
+--------------------------------------------------------------------------------
 icesVocab 1.1-2 (2016-12-08)
 --------------------------------------------------------------------------------
 o Fixed mistake in using wget method in download.file.  Now if download.file is
