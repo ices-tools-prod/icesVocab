@@ -21,6 +21,8 @@
 #'
 #' @examples
 #' findAphia("cod")
+#' \dontrun{
+#' findAphia("cod")
 #' findAphia("Gadus morhua", latin = TRUE)
 #'
 #' # Multiple matches
@@ -29,7 +31,7 @@
 #' # Regular expressions
 #' findAphia("ray", regex = TRUE, full = TRUE)
 #' findAphia("Sebastes", latin = TRUE, regex = TRUE, full = TRUE)
-#'
+#' }
 #' @export
 
 findAphia <- function(species, latin = FALSE, regex = FALSE, full = FALSE) {

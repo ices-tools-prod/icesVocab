@@ -1,17 +1,15 @@
 Package: icesVocab
-Date: 2019-01-11
+Title: ICES Vocabularies Database Web Services
+Date: 2019-01-15
 Version: 1.1-3
-Authors@R: c(person("Colin", "Millar", role=c("aut","cre"), email="colin.millar@ices.dk"),
-             person("Arni", "Magnusson", role="aut"))
-Imports: utils,
-         XML
-Suggests: testthat,
-    knitr,
-    rmarkdown
-Description: R interface to access the RECO POX web services of the ICES (International
-             Council for the Exploration of the Sea) Vocabularies database <https://vocab.ices.dk/services/POX.aspx>.
+Authors@R: c(person("Colin", "Millar", email = "colin.millar@ices.dk", 
+  role = c("aut","cre")), person("Arni", "Magnusson", role = "aut"))
+Imports: utils, XML
+Description: R interface to access the RECO POX web services of the ICES 
+  (International Council for the Exploration of the Sea) Vocabularies database 
+  <https://vocab.ices.dk/services/POX.aspx>.
 License: GPL (>= 2)
 URL: https://vocab.ices.dk/services/POX.aspx
-RoxygenNote: 6.1.0.9000
-VignetteBuilder: knitr
+RoxygenNote: 6.1.1
 Encoding: UTF-8
+BugReports: https://github.com/ices-tools-prod/icesVocab/issues
