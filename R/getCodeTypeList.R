@@ -17,6 +17,7 @@
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
 #' @examples
+#' \dontrun{
 #' # Find code type for World Register of Marine Species (WoRMS)
 #' types <- getCodeTypeList()
 #' types[grep("worms", tolower(types$Description)),]
@@ -24,7 +25,7 @@
 #' findCodeType("worms", full = TRUE)
 #'
 #' # The code type "SpecWoRMS" can be used when calling getCodeList()
-#'
+#' }
 #' @export
 
 getCodeTypeList <- function(date = NULL) {

@@ -23,12 +23,13 @@ A vector of keys (default) or a data frame if full is TRUE.
 Find a lookup key corresponding to a code type.
 }
 \examples{
+\dontrun{
 findCodeType("worms")
 
 findCodeType("DATRAS", full = TRUE)
 
 findCodeType("DATRAS", full = TRUE, date = "2010-01-01")
-
+}
 }
 \seealso{
 \code{\link{getCodeTypeList}} gets a list of code types.

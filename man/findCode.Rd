@@ -25,6 +25,7 @@ Look up a key for a given code and code type.
 Matches are case-insensitive.
 }
 \examples{
+\dontrun{
 findCode("aphia", "cod")
 
 # Multiple matches
@@ -32,7 +33,7 @@ findCode("aphia", c("cod", "haddock", "saithe"), full = TRUE)
 
 findCodeType("ship", full = TRUE)
 findCode("ship", "clupea", full = TRUE)
-
+}
 
 }
 \seealso{

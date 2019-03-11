@@ -16,12 +16,13 @@
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
 #' @examples
+#' \dontrun{
 #' findCodeType("worms")
 #'
 #' findCodeType("DATRAS", full = TRUE)
 #'
 #' findCodeType("DATRAS", full = TRUE, date = "2010-01-01")
-#'
+#' }
 #' @export
 
 findCodeType <- function(code, date = NULL, regex = TRUE, full = FALSE)

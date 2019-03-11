@@ -17,13 +17,14 @@
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
 #' @examples
+#' \dontrun{
 #' # Aphia Species codes
 #' findCodeType("aphia", full = TRUE)
 #' codes <- getCodeList("SpecWoRMS")
 #' head(codes)
 #'
 #' findAphia("cod", full = TRUE)
-#'
+#' }
 #' @export
 
 getCodeList <- function(code_type, date = NULL) {

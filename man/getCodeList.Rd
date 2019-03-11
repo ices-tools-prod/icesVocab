@@ -19,13 +19,14 @@ A data frame.
 Get codes of a given code type.
 }
 \examples{
+\dontrun{
 # Aphia Species codes
 findCodeType("aphia", full = TRUE)
 codes <- getCodeList("SpecWoRMS")
 head(codes)
 
 findAphia("cod", full = TRUE)
-
+}
 }
 \seealso{
 \code{\link{getCodeTypeList}} and \code{\link{getCodeDetail}} get code types

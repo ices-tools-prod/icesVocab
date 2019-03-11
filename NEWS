@@ -1,5 +1,11 @@
 --------------------------------------------------------------------------------
-icesVocab 1.1-3 (2019-01-11)
+icesVocab 1.1-4 (2019-03-12)
+--------------------------------------------------------------------------------
+o made all examples 'dontrun' as errors in database were causing r package
+  build failures.
+
+--------------------------------------------------------------------------------
+icesVocab 1.1-3 (2019-03-12)
 --------------------------------------------------------------------------------
 o Switched to using https route to webservice to fix errors introduced by http
   redirection from http to https on the web server for systems unable to handle

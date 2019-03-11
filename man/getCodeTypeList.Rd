@@ -18,6 +18,7 @@ Get all code types. Mainly useful as a reminder of what code types are
 available.
 }
 \examples{
+\dontrun{
 # Find code type for World Register of Marine Species (WoRMS)
 types <- getCodeTypeList()
 types[grep("worms", tolower(types$Description)),]
@@ -25,7 +26,7 @@ types[grep("worms", tolower(types$Description)),]
 findCodeType("worms", full = TRUE)
 
 # The code type "SpecWoRMS" can be used when calling getCodeList()
-
+}
 }
 \seealso{
 \code{\link{getCodeList}} and \code{\link{getCodeDetail}} get codes of a

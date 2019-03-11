@@ -14,6 +14,7 @@
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
 #' @examples
+#' \dontrun{
 #' # Species code 101170 - Myxine glutinosa
 #' getCodeDetail("SpecWoRMS", 101170)
 #'
@@ -24,7 +25,7 @@
 #'
 #' # get info for had-43
 #' getCodeDetail("ICES_StockCode", "had-34")
-#'
+#' }
 #' @export
 
 getCodeDetail <- function(code_type, code) {

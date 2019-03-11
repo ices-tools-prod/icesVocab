@@ -18,6 +18,7 @@
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
 #' @examples
+#' \dontrun{
 #' findCode("aphia", "cod")
 #'
 #' # Multiple matches
@@ -25,7 +26,7 @@
 #'
 #' findCodeType("ship", full = TRUE)
 #' findCode("ship", "clupea", full = TRUE)
-#'
+#' }
 #'
 #' @export
 
