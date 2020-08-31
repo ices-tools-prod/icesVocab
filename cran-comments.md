@@ -14,8 +14,6 @@ New submission
 
 Package was archived on CRAN
 
-Version contains large components (1.1.4.9000)
-
 Non-FOSS package license (file LICENSE)
 
 Possibly mis-spelled words in DESCRIPTION:
