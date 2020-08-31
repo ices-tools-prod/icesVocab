@@ -1,6 +1,8 @@
 # .travis.yml for ices-tools packages
 
 # Header
+os: linux
+dist: xenial
 language: r
 cache: packages
 warnings_are_errors: false
