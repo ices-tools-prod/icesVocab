@@ -1,10 +1,6 @@
 ## Test environments
-* local Windows 10 install, R 3.5.2
-* Ubuntu 14.04.5 LTS (on travis-ci), (old, release and devel)
-* Ubuntu Linux 16.04 LTS, R-release, GCC (on r-hub.io)
-* Windows Server 2008 R2 SP1, R-devel, 32/64 bit (on r-hub.io)
-* Fedora Linux, R-devel, clang, gfortran (on r-hub.io)
-* OS X 10.13.3 (on travis-ci), (release)
+* local R installation, R 4.0.2
+* ubuntu 16.04 (on travis-ci), R 4.0.2
 * win-builder (devel)
 
 ## R CMD check results
@@ -12,18 +8,23 @@
 0 errors | 0 warnings | 1 note
 
 * checking CRAN incoming feasibility ... NOTE
-Maintainer: ‘Colin Millar <colin.millar@ices.dk>’
+Maintainer: 'Colin Millar <colin.millar@ices.dk>'
 
 New submission
 
 Package was archived on CRAN
 
+Version contains large components (1.1.4.9000)
+
+Non-FOSS package license (file LICENSE)
+
 Possibly mis-spelled words in DESCRIPTION:
   RECO (8:40)
 
-CRAN repository db overrides:
-  X-CRAN-Comment: Archived on 2019-03-05 as check problems were not
-    corrected in time.
+## Notes
+
+previous version had an example which access the internet,
+this has been set to dont run.
 
 ## Reverse dependencies
 
