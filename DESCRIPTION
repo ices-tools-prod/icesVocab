@@ -10,6 +10,6 @@ Description: R interface to access the RECO POX web services of the ICES
   <https://vocab.ices.dk/services/POX.aspx>.
 License: GPL (>= 2)
 URL: https://vocab.ices.dk/services/POX.aspx
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 Encoding: UTF-8
 BugReports: https://github.com/ices-tools-prod/icesVocab/issues

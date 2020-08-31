@@ -25,7 +25,6 @@ Look up Aphia code for a given species.
 Species name matches are case-insensitive.
 }
 \examples{
-findAphia("cod")
 \dontrun{
 findAphia("cod")
 findAphia("Gadus morhua", latin = TRUE)
