@@ -23,8 +23,8 @@ Possibly mis-spelled words in DESCRIPTION:
 
 ## Notes
 
-previous version had an example which access the internet,
-this has been set to dont run.
+previous version had an example which access the internet and was not
+fixed in time, so package was archived, this has been set to dont run.
 
 ## Reverse dependencies
 
