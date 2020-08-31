@@ -2,19 +2,8 @@
 
 # Header
 language: r
-sudo: false
 cache: packages
 warnings_are_errors: false
-
-# matrix: 3x Linux, 1x OS X
-matrix:
-  include:
-  - r: release
-  - r: oldrel
-  - r: devel
-  - os: osx
-    r: release
-    latex: false
 
 # notifications
 notifications:
