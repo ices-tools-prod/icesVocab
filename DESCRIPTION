@@ -8,7 +8,7 @@ Imports: utils, XML
 Description: R interface to access the RECO POX web services of the ICES
   (International Council for the Exploration of the Sea) Vocabularies database
   <https://vocab.ices.dk/services/POX.aspx>.
-License: file LICENSE
+License: GPL-3
 URL: https://vocab.ices.dk/services/POX.aspx
 RoxygenNote: 7.1.1
 Encoding: UTF-8
