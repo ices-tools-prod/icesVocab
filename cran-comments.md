@@ -1,6 +1,6 @@
 ## Test environments
-* local R installation, R 4.0.2
-* ubuntu 16.04 (on travis-ci), R 4.0.0
+* local R installation, 4.0.2 (2020-06-22)
+* ubuntu 16.04.6 (on travis-ci), 4.0.2 (2020-06-22)
 * win-builder (devel)
 
 ## R CMD check results
@@ -14,15 +14,14 @@ New submission
 
 Package was archived on CRAN
 
-Non-FOSS package license (file LICENSE)
-
 Possibly mis-spelled words in DESCRIPTION:
   RECO (8:40)
 
 ## Notes
 
-previous version had an example which access the internet and was not
-fixed in time, so package was archived, this has been set to dont run.
+Previous version had an example which errored this has been amended to
+fail gracefully.  other examples set to donttest to save time in
+building and checking.
 
 ## Reverse dependencies
 
