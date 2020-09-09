@@ -18,7 +18,7 @@ Get all code types. Mainly useful as a reminder of what code types are
 available.
 }
 \examples{
-\dontrun{
+\donttest{
 # Find code type for World Register of Marine Species (WoRMS)
 types <- getCodeTypeList()
 types[grep("worms", tolower(types$Description)),]

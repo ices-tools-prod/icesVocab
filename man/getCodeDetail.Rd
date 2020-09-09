@@ -18,7 +18,7 @@ A data frame.
 Get details for a given code.
 }
 \examples{
-\dontrun{
+\donttest{
 # Species code 101170 - Myxine glutinosa
 getCodeDetail("SpecWoRMS", 101170)
 

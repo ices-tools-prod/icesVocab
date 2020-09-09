@@ -20,7 +20,6 @@
 #' @author Arni Magnusson.
 #'
 #' @examples
-#' \dontrun{
 #' findAphia("cod")
 #' findAphia("Gadus morhua", latin = TRUE)
 #'
@@ -30,7 +29,7 @@
 #' # Regular expressions
 #' findAphia("ray", regex = TRUE, full = TRUE)
 #' findAphia("Sebastes", latin = TRUE, regex = TRUE, full = TRUE)
-#' }
+#'
 #' @export
 
 findAphia <- function(species, latin = FALSE, regex = FALSE, full = FALSE) {
@@ -47,7 +46,7 @@ findAphia <- function(species, latin = FALSE, regex = FALSE, full = FALSE) {
            else
              grep(paste0("^", pattern, "$"), ...)
     if (length(out) == 0)
-      stop("\nSpecies pattern '", pattern, "' not found")
+      warning("\nSpecies pattern '", pattern, "' not found")
     if (length(out) > 1 && !regex)
       message("\nSpecies pattern '", pattern, "' returned multiple matches")
     out

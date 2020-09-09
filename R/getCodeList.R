@@ -17,7 +17,7 @@
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' # Aphia Species codes
 #' findCodeType("aphia", full = TRUE)
 #' codes <- getCodeList("SpecWoRMS")

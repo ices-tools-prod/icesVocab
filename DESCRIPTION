@@ -1,7 +1,7 @@
 Package: icesVocab
 Title: ICES Vocabularies Database Web Services
-Date: 2020-08-31
-Version: 1.1.5
+Date: 2020-09-09
+Version: 1.1.6
 Authors@R: c(person("Colin", "Millar", email = "colin.millar@ices.dk",
   role = c("aut","cre")), person("Arni", "Magnusson", role = "aut"))
 Imports: utils, XML
@@ -13,3 +13,5 @@ URL: https://vocab.ices.dk/services/POX.aspx
 RoxygenNote: 7.1.1
 Encoding: UTF-8
 BugReports: https://github.com/ices-tools-prod/icesVocab/issues
+Suggests: 
+    testthat

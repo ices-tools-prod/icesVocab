@@ -25,7 +25,6 @@ Look up Aphia code for a given species.
 Species name matches are case-insensitive.
 }
 \examples{
-\dontrun{
 findAphia("cod")
 findAphia("Gadus morhua", latin = TRUE)
 
@@ -35,7 +34,7 @@ findAphia(c("cod", "haddock", "saithe"))
 # Regular expressions
 findAphia("ray", regex = TRUE, full = TRUE)
 findAphia("Sebastes", latin = TRUE, regex = TRUE, full = TRUE)
-}
+
 }
 \seealso{
 \code{\link{getCodeList}} can be used to get all Aphia codes; see example on
