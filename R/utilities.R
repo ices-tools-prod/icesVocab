@@ -156,8 +156,6 @@ checkVocabWebserviceOK <- function() {
 simplify <- function(x) {
   # from Arni's toolbox
   # coerce object to simplest storage mode: factor > character > numeric > integer
-  owarn <- options(warn = -1)
-  on.exit(options(owarn))
   # list or data.frame
   if (is.list(x)) {
     for (i in seq_len(length(x)))
