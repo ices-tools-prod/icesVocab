@@ -1,3 +1,6 @@
+# icesVocab 1.1.7 (2020-09-17)
+* remove optons(warn = -1) from internal simplify function
+
 # icesVocab 1.1.6 (2020-09-09)
 * made example 'donttest', findAphia fails gracefully if web service
   is down, and examples reinstated
