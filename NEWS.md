@@ -1,3 +1,6 @@
+# icesVocab 1.1.8 (2020-09-28)
+* internal bug fixes changes
+
 # icesVocab 1.1.7 (2020-09-17)
 * remove optons(warn = -1) from internal simplify function
 
