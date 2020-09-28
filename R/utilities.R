@@ -49,85 +49,52 @@ readVocab_internal <- function(url) {
 }
 
 
-#' @importFrom XML xmlParse
-#' @importFrom XML xmlRoot
-#' @importFrom XML xmlSize
-#' @importFrom XML getChildrenStrings
-#' @importFrom XML removeNodes
-parseVocab <- function(x) {
-  # parse the xml text string suppplied by the Datras webservice
-  # returning a dataframe
+#' @importFrom xml2 read_xml
+#' @importFrom xml2 as_list
+parseVocab <- function(xml) {
 
-  if (x == "") {
+  if (xml == "") {
     return(data.frame())
   }
 
-  x <- xmlParse(x)
+  # convert to list
+  data <- as_list(read_xml(xml))
 
-  # get root node
-  x <- xmlRoot(x)
+  # process into a data.frame
+  out <- toVocabdf(data[[1]][[1]])
 
   # exit if no data is being returned
-  if (xmlSize(x) == 0) return(NULL)
-  nc <- length(getChildrenStrings(x[[1]]))
-  # final field is always an error feild (try using xpath to avoid this)
-  removeNodes(x[[xmlSize(x)]])
+  if (nrow(out) == 0) {
+    return(NULL)
+  }
 
-  # restructure data into a data frame
-  x <- sapply(1:xmlSize(x),
-                function(i) {
-                  out <- getChildrenStrings(x[[1]])
-                  removeNodes(x[[1]])
-                  out
-                })
-  if (nc == 1) x <- matrix(x, 1, length(x), dimnames = list(names(x[1])))
-  x <- as.data.frame(t(x), stringsAsFactors = FALSE)
-  x <- simplify(x)
-
-  # clean trailing white space from text columns
-  charcol <- which(sapply(x, is.character))
-  x[charcol] <- lapply(x[charcol], trimws)
-
-  x
+  out
 }
 
-#' @importFrom XML xmlToList
-parseVocabDetail <- function(x) {
-  # parse the xml text string suppplied by the Datras webservice
-  # returning a dataframe
-  x <- xmlParse(x)
+#' @importFrom xml2 read_xml
+#' @importFrom xml2 as_list
+parseVocabDetail <- function(xml) {
 
-  # convet to list
-  x <- xmlToList(x)[[1]]
-
-  # get top row
-  todf <- function(y) {
-    y[sapply(y, is.null)] <- NA
-    as.data.frame(y)
+  if (xml == "") {
+    return(data.frame())
   }
-  header <- todf(x[1:5])
+
+  # convert to list
+  data <- as_list(read_xml(xml))
+  CodeDetail <- data$GetCodeDetailResponse$CodeDetail
+
+  # process into a data.frame
+  header <- toVocabdf(list(CodeDetail[c("Key", "Description", "LongDescription", "Modified", "Deprecated")]))
 
   # get parents
-  parents <- x[names(x) == "ParentRelation"]
-  parent_code <-
-    do.call(rbind,
-      lapply(unname(parents),
-        function(y) todf(y$Code)))
-  parent_code_type <-
-    do.call(rbind,
-            lapply(unname(parents),
-                   function(y) todf(y$CodeType)))
+  parents <- CodeDetail$ParentRelation
+  parent_code <- toVocabdf(lapply(parents, "[[", "Code"))
+  parent_code_type <- toVocabdf(lapply(parents, "[[", "CodeType"))
 
   # get children
-  children <- x[names(x) == "ChildRelation"]
-  child_code <-
-    do.call(rbind,
-            lapply(unname(children),
-                   function(y) todf(y$Code)))
-  child_code_type <-
-    do.call(rbind,
-            lapply(unname(children),
-                   function(y) todf(y$CodeType)))
+  children <- CodeDetail$ChildRelation
+  child_code <- toVocabdf(lapply(children, "[[", "Code"))
+  child_code_type <- toVocabdf(lapply(children, "[[", "CodeType"))
 
   # restructure
   out <- list(detail = header,
@@ -137,6 +104,40 @@ parseVocabDetail <- function(x) {
   # return
   out
 }
+
+#' @importFrom utils type.convert
+toVocabdf <- function(x) {
+  # convert to data.frame
+  out <-
+    lapply(
+      x,
+      function(Code) {
+        as.data.frame(
+          lapply(
+            Code,
+            function(x) if (length(x) == 0) NA else x[[1]]
+          ),
+          stringsAsFactors = FALSE
+        )
+      }
+    )
+  out <- do.call(rbind, out)
+  row.names(out) <- NULL
+
+  # convert non text columns
+  out$Key <- type.convert(out$Key, as.is = TRUE)
+  out$Modified <- as.Date(out$Modified)
+  if ("Deprecated" %in% names(out)) {
+    out$Deprecated <- out$Deprecated == "true"
+  }
+
+  # clean trailing white space from text columns
+  charcol <- which(sapply(out, is.character))
+  out[charcol] <- lapply(out[charcol], trimws)
+
+  out
+}
+
 
 
 checkVocabWebserviceOK <- function() {
@@ -150,48 +151,6 @@ checkVocabWebserviceOK <- function() {
   } else {
     TRUE
   }
-}
-
-
-simplify <- function(x) {
-  # from Arni's toolbox
-  # coerce object to simplest storage mode: factor > character > numeric > integer
-  # list or data.frame
-  if (is.list(x)) {
-    for (i in seq_len(length(x)))
-      x[[i]] <- simplify(x[[i]])
-  }
-  # matrix
-  else if (is.matrix(x))
-  {
-    if (is.character(x) && sum(is.na(as.numeric(x))) == sum(is.na(x)))
-      mode(x) <- "numeric"
-    if (is.numeric(x))
-    {
-      y <- as.integer(x)
-      if (sum(is.na(x)) == sum(is.na(y)) && all(x == y, na.rm = TRUE))
-        mode(x) <- "integer"
-    }
-  }
-  # vector
-  else
-  {
-    if (is.factor(x))
-      x <- as.character(x)
-    if (is.character(x))
-    {
-      y <- as.numeric(x)
-      if (sum(is.na(y)) == sum(is.na(x)))
-        x <- y
-    }
-    if (is.numeric(x))
-    {
-      y <- as.integer(x)
-      if (sum(is.na(x)) == sum(is.na(y)) && all(x == y, na.rm = TRUE))
-        x <- y
-    }
-  }
-  x
 }
 
 # returns TRUE if correct operating system is passed as an argument

@@ -39,9 +39,9 @@ getCodeTypeList <- function(date = NULL) {
   }
 
   # read url contents
-  out <- readVocab(url)
+  xml <- readVocab(url)
   # parse the text string returning a dataframe
-  out <- parseVocab(out)
+  out <- parseVocab(xml)
 
   # return
   out

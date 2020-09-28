@@ -32,13 +32,13 @@ getCodeDetail <- function(code_type, code) {
   message("The output from this function is developing.  please do not rely on the current output format")
 
   # form url
-  url <- sprintf("https://vocab.ices.dk/services/pox/GetCodeDetail/%s/%s",
-                 code_type, code)
+  url <-
+    sprintf("https://vocab.ices.dk/services/pox/GetCodeDetail/%s/%s", code_type, code)
 
   # read url contents
-  out <- readVocab(url)
+  xml <- readVocab(url)
   # parse the text string returning a dataframe
-  out <- parseVocabDetail(out)
+  out <- parseVocabDetail(xml)
 
   out
 }

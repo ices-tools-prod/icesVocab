@@ -29,8 +29,8 @@
 
 getCodeList <- function(code_type, date = NULL) {
   # base url
-  url <- sprintf("https://vocab.ices.dk/services/pox/GetCodeList/%s",
-                 code_type)
+  url <-
+    sprintf("https://vocab.ices.dk/services/pox/GetCodeList/%s", code_type)
 
   # append modified-after-date filter
   if (!is.null(date)) {
@@ -38,9 +38,9 @@ getCodeList <- function(code_type, date = NULL) {
   }
 
   # read url contents
-  out <- readVocab(url)
+  xml <- readVocab(url)
   # parse the text string returning a dataframe
-  out <- parseVocab(out)
+  out <- parseVocab(xml)
 
   out
 }

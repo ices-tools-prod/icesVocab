@@ -41,10 +41,13 @@ findAphia <- function(species, latin = FALSE, regex = FALSE, full = FALSE) {
   grepsafe <- function(pattern, ...)
   {
     # When !regex, convert species to ^species$
-    out <- if (regex)
-             grep(pattern, ...)
-           else
-             grep(paste0("^", pattern, "$"), ...)
+    out <-
+      if (regex) {
+        grep(pattern, ...)
+      }
+      else {
+        grep(paste0("^", pattern, "$"), ...)
+      }
     if (length(out) == 0)
       warning("\nSpecies pattern '", pattern, "' not found")
     if (length(out) > 1 && !regex)
@@ -53,7 +56,7 @@ findAphia <- function(species, latin = FALSE, regex = FALSE, full = FALSE) {
   }
 
   select <- unlist(lapply(species, grepsafe, description, ignore.case = TRUE))
-  out <- if (full) worms[select,] else worms$Key[select]
+  worms <- worms[select, ]
 
-  out
+  if (full) worms else worms$Key
 }

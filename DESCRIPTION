@@ -4,7 +4,7 @@ Date: 2020-09-17
 Version: 1.1.7
 Authors@R: c(person("Colin", "Millar", email = "colin.millar@ices.dk",
   role = c("aut","cre")), person("Arni", "Magnusson", role = "aut"))
-Imports: utils, XML
+Imports: utils, xml2
 Description: R interface to access the RECO POX web services of the ICES
   (International Council for the Exploration of the Sea) Vocabularies database
   <https://vocab.ices.dk/services/POX.aspx>.
@@ -13,5 +13,5 @@ URL: https://vocab.ices.dk/services/POX.aspx
 RoxygenNote: 7.1.1
 Encoding: UTF-8
 BugReports: https://github.com/ices-tools-prod/icesVocab/issues
-Suggests: 
+Suggests:
     testthat
