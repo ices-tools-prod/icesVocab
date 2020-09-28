@@ -1,5 +1,5 @@
 ## Test environments
-* local R installation, 4.0.2 (2020-06-22)
+* Windows 10 x64 (build 19041), 4.0.2 (2020-06-22)
 * ubuntu 16.04.6 (on travis-ci), 4.0.2 (2020-06-22)
 * win-builder (devel)
 
@@ -7,21 +7,21 @@
 
 0 errors | 0 warnings | 1 note
 
-* checking CRAN incoming feasibility ... NOTE
+* checking CRAN incoming feasibility ... Note_to_CRAN_maintainers
 Maintainer: 'Colin Millar <colin.millar@ices.dk>'
 
-New submission
-
-Package was archived on CRAN
-
-Possibly mis-spelled words in DESCRIPTION:
-  RECO (8:40)
+** running examples for arch 'i386' ... [12s] NOTE
+Examples with CPU (user + system) or elapsed time > 10s
+           user system elapsed
+findAphia 10.22   0.06    11.5
+** running examples for arch 'x64' ... [12s] NOTE
+Examples with CPU (user + system) or elapsed time > 10s
+           user system elapsed
+findAphia 10.64   0.05   11.81
 
 ## Notes
 
-Previous version had an example which errored this has been amended to
-fail gracefully.  other examples set to donttest to save time in
-building and checking.
+Fixed bug in xml parsing
 
 ## Reverse dependencies
 
