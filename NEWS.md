@@ -1,3 +1,8 @@
+# icesVocab 1.2.0 (2020-10-26)
+
+* internal bug fixes
+
+
 # icesVocab 1.1.8 (2020-09-28)
 * internal bug fixes changes
 
