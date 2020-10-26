@@ -8,5 +8,6 @@ test_that("findAphia doesn't crash when webservice is down", {
   expect_equal(parseVocab(res), data.frame())
 
   key <- expect_warning(findAphia("puddin"))
-  expect_equal(key, integer(0))
+
+  expect_equal(key, character(0))
 })
