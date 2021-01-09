@@ -20,7 +20,10 @@ Vocabulary code Keys are always characters. There were two issues fixed:
   different return types - now fixed
 2. some systems seem to be returning NULL when a column from a zero row
   data.frame is accessed. Can't fully confirm this, but am not relying
-  on this anymore in anycase.
+  on this anymore in anycase, See: Flavor: r-patched-solaris-x86 on
+  https://cran-archive.r-project.org/web/checks/2020/2020-10-12_check_results_icesVocab.html.
+  It seems to be the case that I cannot rely on this being true in all systems:
+  `expect_equal(data.frame(x = "", y = "")[integer(0), ]$x, character(0))`
 
 ## Reverse dependencies
 

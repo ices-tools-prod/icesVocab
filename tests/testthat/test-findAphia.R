@@ -13,6 +13,7 @@ test_that("findAphia doesn't crash when webservice is down", {
 
 })
 
-test_that("R behaviour with zero row data.frames", {
-  expect_equal(data.frame(Key = "", name = "")[integer(0), ]$Key, character(0))
-})
+# do not include this in the CRAN submission
+#test_that("R behaviour with zero row data.frames", {
+#  expect_equal(data.frame(Key = "", name = "")[integer(0), ]$Key, character(0))
+#})
