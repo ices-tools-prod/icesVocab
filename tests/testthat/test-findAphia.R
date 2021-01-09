@@ -10,4 +10,9 @@ test_that("findAphia doesn't crash when webservice is down", {
   key <- expect_warning(findAphia("puddin"))
 
   expect_equal(key, character(0))
+
+})
+
+test_that("R behaviour with zero row data.frames", {
+  expect_equal(data.frame(Key = "", name = "")[integer(0), ]$Key, character(0))
 })

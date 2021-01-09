@@ -1,5 +1,5 @@
 ## Test environments
-* Windows 10 x64 (build 19041), 4.0.2 (2020-06-22)
+* Windows 10 x64 (build 19041), 4.0.3 (2020-10-10)
 * ubuntu 16.04.6 (on travis-ci), 4.0.2 (2020-06-22)
 * win-builder (devel)
 
@@ -10,18 +10,17 @@
 * checking CRAN incoming feasibility ... Note_to_CRAN_maintainers
 Maintainer: 'Colin Millar <colin.millar@ices.dk>'
 
-** running examples for arch 'i386' ... [12s] NOTE
-Examples with CPU (user + system) or elapsed time > 10s
-           user system elapsed
-findAphia 10.22   0.06    11.5
-** running examples for arch 'x64' ... [12s] NOTE
-Examples with CPU (user + system) or elapsed time > 10s
-           user system elapsed
-findAphia 10.64   0.05   11.81
+CRAN repository db overrides:
+  X-CRAN-Comment: Archived on 2020-10-11 for policy violation
 
 ## Notes
 
-Fixed bug in xml parsing
+Vocabulary code Keys are always characters. There were two issues fixed:
+1. The Key column was being converted via type.convert - which yeileded
+  different return types - now fixed
+2. some systems seem to be returning NULL when a column from a zero row
+  data.frame is accessed. Can't fully confirm this, but am not relying
+  on this anymore in anycase.
 
 ## Reverse dependencies
 
