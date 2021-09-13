@@ -1,6 +1,7 @@
 
+#' @importFrom xml2 read_xml
 readVocab <- function(url) {
-  res <- try(readVocab_internal(url), silent = TRUE)
+  res <- try(read_xml(url), silent = TRUE)
 
   if (inherits(res, "try-error")) {
 
@@ -11,54 +12,17 @@ readVocab <- function(url) {
   res
 }
 
-#' @importFrom utils download.file
-readVocab_internal <- function(url) {
-
-  # try downloading first:
-  # create file name
-  tmp <- tempfile()
-  # download file
-  ret <-
-    if (os.type("windows")) {
-      download.file(url, destfile = tmp, quiet = TRUE)
-    } else if (os.type("unix") & Sys.which("wget") != "") {
-      download.file(url, destfile = tmp, quiet = TRUE, method = "wget")
-    } else if (os.type("unix") & Sys.which("curl") != "") {
-      download.file(url, destfile = tmp, quiet = TRUE, method = "curl")
-    } else {
-      127
-    }
-  on.exit(unlink(tmp))
-
-  # check return value
-  if (ret == 0) {
-    # scan lines
-    scan(tmp, what = "", sep = "\n", quiet = TRUE)
-  } else {
-    message("Unable to download file so using slower method url().\n",
-            "Try setting an appropriate value via \n\toptions(download.file.method = ...)\n",
-            "see ?download.file for more information.")
-    # connect to url
-    con <- url(url)
-    on.exit(close(con))
-
-    # scan lines
-    scan(con, what = "", sep = "\n", quiet = TRUE)
-  }
-
-}
-
 
 #' @importFrom xml2 read_xml
 #' @importFrom xml2 as_list
 parseVocab <- function(xml) {
 
-  if (xml == "") {
+  if (identical(xml,"")) {
     return(data.frame())
   }
 
   # convert to list
-  data <- as_list(read_xml(xml))
+  data <- as_list(xml)
 
   # process into a data.frame
   out <- toVocabdf(data[[1]][[1]])
@@ -71,16 +35,16 @@ parseVocab <- function(xml) {
   out
 }
 
-#' @importFrom xml2 read_xml
+
 #' @importFrom xml2 as_list
 parseVocabDetail <- function(xml) {
 
-  if (xml == "") {
+  if (identical(xml, "")) {
     return(data.frame())
   }
 
   # convert to list
-  data <- as_list(read_xml(xml))
+  data <- as_list(xml)
   CodeDetail <- data$GetCodeDetailResponse$CodeDetail
 
   # process into a data.frame

@@ -1,7 +1,7 @@
 Package: icesVocab
 Title: ICES Vocabularies Database Web Services
-Date: 2020-10-26
-Version: 1.1.9
+Date: 2021-09-13
+Version: 1.1.10
 Authors@R: c(person("Colin", "Millar", email = "colin.millar@ices.dk",
   role = c("aut","cre")), person("Arni", "Magnusson", role = "aut"))
 Imports: utils, xml2
@@ -10,7 +10,7 @@ Description: R interface to access the RECO POX web services of the ICES
   <https://vocab.ices.dk/services/POX.aspx>.
 License: GPL-3
 URL: https://vocab.ices.dk/services/POX.aspx
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Encoding: UTF-8
 BugReports: https://github.com/ices-tools-prod/icesVocab/issues
 Suggests:
