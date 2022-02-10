@@ -6,7 +6,7 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors | 0 warnings | 0 notes
 
 * checking CRAN incoming feasibility ... Note_to_CRAN_maintainers
 Maintainer: 'Colin Millar <colin.millar@ices.dk>'
