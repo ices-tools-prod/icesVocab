@@ -60,6 +60,5 @@ encounter problems or have suggestions for future versions.
 The current development version can be installed using:
 
 ```R
-library(devtools)
-install_github("ices-tools-prod/icesVocab")
+install.packages("icesVocab", repos = 'https://ices-tools-prod.r-universe.dev')
 ```
