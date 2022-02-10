@@ -25,7 +25,7 @@ Look up a key for a given code and code type.
 Matches are case-insensitive.
 }
 \examples{
-\dontrun{
+\donttest{
 findCode("aphia", "cod")
 
 # Multiple matches

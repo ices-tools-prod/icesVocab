@@ -20,6 +20,7 @@
 #' @author Arni Magnusson.
 #'
 #' @examples
+#' \donttest{
 #' findAphia("cod")
 #' findAphia("Gadus morhua", latin = TRUE)
 #'
@@ -29,7 +30,7 @@
 #' # Regular expressions
 #' findAphia("ray", regex = TRUE, full = TRUE)
 #' findAphia("Sebastes", latin = TRUE, regex = TRUE, full = TRUE)
-#'
+#' }
 #' @export
 
 findAphia <- function(species, latin = FALSE, regex = FALSE, full = FALSE) {
