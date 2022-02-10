@@ -4,12 +4,6 @@
 
 * internal bug fixes
 
-
-# icesVocab 1.1.10.9000 (2022-02-10)
-
-* internal bug fixes
-
-
 # icesVocab 1.1.10 (2021-09-13)
 * Use read_xml to read directly from url to avoid local encodings when using download.file
 
