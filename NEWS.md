@@ -2,7 +2,7 @@
 
 # icesVocab 1.2.0 (2022-02-10)
 
-- Same as previous version.
+* internal bug fixes
 
 
 # icesVocab 1.1.10.9000 (2022-02-10)
