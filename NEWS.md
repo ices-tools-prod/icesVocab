@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# icesVocab 1.2.0 (2022-02-10)
+
+- Same as previous version.
+
+
 # icesVocab 1.1.10.9000 (2022-02-10)
 
 * internal bug fixes
