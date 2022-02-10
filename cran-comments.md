@@ -11,9 +11,6 @@
 * checking CRAN incoming feasibility ... Note_to_CRAN_maintainers
 Maintainer: 'Colin Millar <colin.millar@ices.dk>'
 
-Examples with CPU (user + system) or elapsed time > 10s
-           user system elapsed
-findAphia 23.83   0.39   25.28
 ## Reverse dependencies
 
 icesDatras
