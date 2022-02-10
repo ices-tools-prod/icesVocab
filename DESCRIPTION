@@ -1,6 +1,5 @@
 Package: icesVocab
 Title: ICES Vocabularies Database Web Services
-Date: 2021-09-13
 Version: 1.1.10
 Authors@R: c(person("Colin", "Millar", email = "colin.millar@ices.dk",
   role = c("aut","cre")), person("Arni", "Magnusson", role = "aut"))
