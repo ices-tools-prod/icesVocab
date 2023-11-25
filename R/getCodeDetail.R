@@ -23,7 +23,7 @@
 #'
 #' getCodeDetail("SpecWoRMS", 126437)
 #'
-#' # get info for had-43
+#' # get info for had-34
 #' getCodeDetail("ICES_StockCode", "had-34")
 #' }
 #' @export
