@@ -11,7 +11,7 @@ linkCodes(code_type, linked_code_type, codes = NULL, ...)
 
 \item{linked_code_type}{another ICES Vocabulary code type.}
 
-\item{codes}{whether to only match a selection of codes within a code type.}
+\item{codes}{whether to only match a selection of codes within the first code type.}
 
 \item{...}{for back compatibility.}
 }
@@ -25,7 +25,16 @@ Find parent or child linkages between the codes of two code types.
 \dontrun{
 x <- linkCodes("Pargroup", "PARAM")
 
-x <- linkCodes("ICES_Area", "ICES_StockCode", codes = c("27.1", "27.2"))
+# get all stocks in subarea 4a
+# note you would need to cross check with icesSD for
+# currently active stocks
+linkCodes("ICES_Area", "ICES_StockCode", codes = c("27.4.a"))
+
+# get all areas for cod.27.1-2
+linkCodes("ICES_StockCode", "ICES_Area", codes = c("cod.27.1-2"))
+
+get areas for cod.27.21, cod.27.24-32 and cod.27.46a7d20
+linkCodes("ICES_StockCode", "ICES_Area", codes = c("cod.27.21", "cod.27.24-32", "cod.27.46a7d20"))
 }
 }
 \seealso{
