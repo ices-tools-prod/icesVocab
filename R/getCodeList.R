@@ -17,7 +17,7 @@
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' # Aphia Species codes
 #' findCodeType("aphia", full = TRUE)
 #' codes <- getCodeList("SpecWoRMS")
@@ -38,7 +38,7 @@ getCodeList <- function(code_type, date = NULL) {
   }
 
   # read url contents
-  xml <- readVocab(url)
+  xml <- readVocab_cached(url)
   # parse the text string returning a dataframe
   out <- parseVocab(xml)
 

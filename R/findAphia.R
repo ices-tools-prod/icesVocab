@@ -20,7 +20,7 @@
 #' @author Arni Magnusson.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' findAphia("cod")
 #' findAphia("Gadus morhua", latin = TRUE)
 #'

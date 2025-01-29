@@ -17,7 +17,7 @@
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' # Find code type for World Register of Marine Species (WoRMS)
 #' types <- getCodeTypeList()
 #' types[grep("worms", tolower(types$Description)),]
@@ -39,7 +39,7 @@ getCodeTypeList <- function(date = NULL) {
   }
 
   # read url contents
-  xml <- readVocab(url)
+  xml <- readVocab_cached(url)
   # parse the text string returning a dataframe
   out <- parseVocab(xml)
 

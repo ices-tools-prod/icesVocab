@@ -23,7 +23,7 @@ A vector of keys (default) or a data frame if full is TRUE.
 Find a lookup key corresponding to a code type.
 }
 \examples{
-\donttest{
+\dontrun{
 findCodeType("worms")
 
 findCodeType("DATRAS", full = TRUE)

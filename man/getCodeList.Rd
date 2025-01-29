@@ -19,7 +19,7 @@ A data frame.
 Get codes of a given code type.
 }
 \examples{
-\donttest{
+\dontrun{
 # Aphia Species codes
 findCodeType("aphia", full = TRUE)
 codes <- getCodeList("SpecWoRMS")

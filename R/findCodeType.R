@@ -16,7 +16,7 @@
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' findCodeType("worms")
 #'
 #' findCodeType("DATRAS", full = TRUE)

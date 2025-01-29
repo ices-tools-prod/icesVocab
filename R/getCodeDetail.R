@@ -14,7 +14,7 @@
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' # Species code 101170 - Myxine glutinosa
 #' getCodeDetail("SpecWoRMS", 101170)
 #'

@@ -12,6 +12,7 @@ readVocab <- function(url) {
   res
 }
 
+readVocab_cached <- readVocab
 
 #' @importFrom xml2 read_xml
 #' @importFrom xml2 as_list

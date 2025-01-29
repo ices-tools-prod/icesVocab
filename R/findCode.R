@@ -18,7 +18,7 @@
 #' \code{\link{icesVocab-package}} gives an overview of the package.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' findCode("aphia", "cod")
 #'
 #' # Multiple matches

@@ -1,5 +1,3 @@
-#' @docType package
-#'
 #' @name icesVocab-package
 #'
 #' @aliases icesVocab
@@ -28,5 +26,4 @@
 #' ICES Vocabularies database: \url{http://vocab.ices.dk}.
 #'
 #' ICES Vocabularies web services: \url{http://vocab.ices.dk/services/POX.aspx}.
-
-NA
+"_PACKAGE"
