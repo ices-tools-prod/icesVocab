@@ -3,6 +3,7 @@
 #' Get codes of a given code type.
 #'
 #' @param code_type the code type, e.g. SpecWoRMS.
+#' @param code optional code to restrict output to.
 #' @param date restrict output to codes modified after a given date in
 #'        yyyy-mm-dd format, e.g. "2010-12-01".
 #'
@@ -23,24 +24,24 @@
 #' codes <- getCodeList("SpecWoRMS")
 #' head(codes)
 #'
-#' findAphia("cod", full = TRUE)
+#' findCode("ship", "clupea", full = TRUE)
+#'
+#' getCodeList("ICES_Area")
+#' getCodeList("ICES_Area", code = "27.4.a")
 #' }
 #' @export
 
-getCodeList <- function(code_type, date = NULL) {
-  # base url
-  url <-
-    sprintf("https://vocab.ices.dk/services/pox/GetCodeList/%s", code_type)
-
-  # append modified-after-date filter
-  if (!is.null(date)) {
-    url <- sprintf(paste0(url, "/%s"), date)
-  }
+getCodeList <- function(code_type, code = NULL, date = NULL) {
 
   # read url contents
-  xml <- readVocab_cached(url)
-  # parse the text string returning a dataframe
-  out <- parseVocab(xml)
+  out <-
+    vocab_get_cached(
+      vocab_api(paste0("Code/", code_type), code = code, modified = date)
+    )
 
+  # convert names
+  names(out) <- CamelCase(names(out))
+
+  # return
   out
 }

@@ -29,14 +29,20 @@
 #' @export
 
 getCodeDetail <- function(code_type, code) {
-  # form url
-  url <-
-    sprintf("https://vocab.ices.dk/services/pox/GetCodeDetail/%s/%s", code_type, code)
 
   # read url contents
-  xml <- readVocab(url)
-  # parse the text string returning a dataframe
-  out <- parseVocabDetail(xml)
+  out <-
+    vocab_get_cached(
+      vocab_api(
+        sprintf("CodeDetail/%s/%s", code_type, code)
+      )
+    )
 
+  # convert to detail structure
+
+  # convert names
+  #names(out) <- CamelCase(names(out))
+
+  # return
   out
 }

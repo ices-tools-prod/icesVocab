@@ -9,12 +9,22 @@ getcache <- cachem::cache_mem(max_age = 15 * 60)
 .onLoad <- function(libname, pkgname) {
 
   # set functions to use caching
-  readVocab_cached <<-
+  vocab_get_cached <<-
     memoise::memoise(
-      readVocab_cached,
+      vocab_get_cached,
       cache = getcache,
       hash = function(x) hash(x$url)
     )
+
+  # set some default options
+  opts <-
+    c(
+      icesVocab.messages = "TRUE"
+    )
+
+  for (i in setdiff(names(opts), names(options()))) {
+    eval(parse(text = paste0("options(", i, "=", opts[i], ")")))
+  }
 
   invisible()
 }

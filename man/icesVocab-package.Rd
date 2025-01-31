@@ -29,7 +29,7 @@ ICES Vocabularies web services: \url{http://vocab.ices.dk/services/POX.aspx}.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://vocab.ices.dk/services/POX.aspx}
+  \item \url{https://vocab.ices.dk/services/api/swagger/index.html}
   \item Report bugs at \url{https://github.com/ices-tools-prod/icesVocab/issues}
 }
 

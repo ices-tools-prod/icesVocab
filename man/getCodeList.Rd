@@ -4,10 +4,12 @@
 \alias{getCodeList}
 \title{Get Codes}
 \usage{
-getCodeList(code_type, date = NULL)
+getCodeList(code_type, code = NULL, date = NULL)
 }
 \arguments{
 \item{code_type}{the code type, e.g. SpecWoRMS.}
+
+\item{code}{optional code to restrict output to.}
 
 \item{date}{restrict output to codes modified after a given date in
 yyyy-mm-dd format, e.g. "2010-12-01".}
@@ -25,7 +27,10 @@ findCodeType("aphia", full = TRUE)
 codes <- getCodeList("SpecWoRMS")
 head(codes)
 
-findAphia("cod", full = TRUE)
+findCode("ship", "clupea", full = TRUE)
+
+getCodeList("ICES_Area")
+getCodeList("ICES_Area", code = "27.4.a")
 }
 }
 \seealso{

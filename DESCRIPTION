@@ -1,20 +1,18 @@
 Package: icesVocab
 Title: ICES Vocabularies Database Web Services
-Version: 1.2.2
+Version: 1.3.0
 Authors@R: c(person("Colin", "Millar", email = "colin.millar@ices.dk",
   role = c("aut","cre")), person("Arni", "Magnusson", role = "aut"))
-Imports: utils,
-          xml2,
+Imports: icesConnect,
           memoise,
           cachem,
-          rlang
-Description: R interface to access the RECO POX web services of the ICES
+          rlang,
+          httr
+Description: R interface to access the Vocabularies REST API of the ICES
   (International Council for the Exploration of the Sea) Vocabularies database
-  <https://vocab.ices.dk/services/POX.aspx>.
+  <https://vocab.ices.dk/services/>.
 License: GPL-3
-URL: https://vocab.ices.dk/services/POX.aspx
+URL: https://vocab.ices.dk/services/api/swagger/index.html
 RoxygenNote: 7.3.2
 Encoding: UTF-8
 BugReports: https://github.com/ices-tools-prod/icesVocab/issues
-Suggests:
-    testthat

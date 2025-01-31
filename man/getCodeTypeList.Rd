@@ -4,9 +4,11 @@
 \alias{getCodeTypeList}
 \title{Get Types}
 \usage{
-getCodeTypeList(date = NULL)
+getCodeTypeList(code_type = NULL, date = NULL)
 }
 \arguments{
+\item{code_type}{optional parameter to restrict output to a specific code type.}
+
 \item{date}{restrict output to code types modified after a given date in
 yyyy-mm-dd format, e.g. "2010-12-01"}
 }
@@ -23,9 +25,13 @@ available.
 types <- getCodeTypeList()
 types[grep("worms", tolower(types$Description)),]
 
+# The code type "SpecWoRMS" can be used when calling getCodeTypeList()
+getCodeTypeList(code_type = "SpecWoRMS")
+# or using the guid
+getCodeTypeList(code_type = "f107b677-97ff-4cd9-b4ab-637bb6706066")
+
 findCodeType("worms", full = TRUE)
 
-# The code type "SpecWoRMS" can be used when calling getCodeList()
 }
 }
 \seealso{
