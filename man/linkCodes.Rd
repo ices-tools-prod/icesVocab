@@ -31,7 +31,7 @@ x <- linkCodes("Pargroup", "PARAM")
 # get all areas for cod.27.1-2
 linkCodes("ICES_StockCode", "ICES_Area", codes = c("cod.27.1-2"))
 
-get areas for cod.27.21, cod.27.24-32 and cod.27.46a7d20
+# get areas for cod.27.21, cod.27.24-32 and cod.27.46a7d20
 linkCodes("ICES_StockCode", "ICES_Area", codes = c("cod.27.21", "cod.27.24-32", "cod.27.46a7d20"))
 }
 }
