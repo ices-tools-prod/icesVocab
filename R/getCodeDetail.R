@@ -39,10 +39,26 @@ getCodeDetail <- function(code_type, code) {
     )
 
   # convert to detail structure
+  names <- c("id", "guid", "key", "description", "longDescription", "modified")
 
   # convert names
-  #names(out) <- CamelCase(names(out))
+  convert_names <- function(x) {
+    names(x) <- CamelCase(names(x))
+    x
+  }
 
   # return
-  out
+  list(
+    detail = convert_names(data.frame(out[names])),
+    parents =
+      list(
+        code_types = convert_names(out$parentRelation$codeType[names]),
+        codes = convert_names(out$parentRelation$code[names])
+      ),
+    children =
+      list(
+        code_types = convert_names(out$childRelation$codeType[names]),
+        codes = convert_names(out$childRelation$code[names])
+      )
+  )
 }
