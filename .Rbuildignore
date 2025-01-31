@@ -1,9 +1,7 @@
 ^CRAN-RELEASE$
-.travis.yml
 README.md
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^cran-comments\.md$
-codecov.yml
 LICENSE
 ^CRAN-SUBMISSION$
