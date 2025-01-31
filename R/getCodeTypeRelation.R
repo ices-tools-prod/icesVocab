@@ -42,7 +42,7 @@ getCodeTypeRelation <- function(code_type, linked_code_type, rename = TRUE) {
 
   # fix column ordering
   check <- getCodeList(code_type, code = out$firstGUID[1])
-  if (!identical(nrow(check), 1)) {
+  if (!identical(nrow(check), 1L)) {
     names_out <- names(out)
     names(out)[1:6] <- names_out[c(4:6, 1:3)]
     out <- out[names_out]
