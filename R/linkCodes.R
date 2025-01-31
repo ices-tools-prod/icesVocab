@@ -4,7 +4,7 @@
 #'
 #' @param code_type an ICES Vocabulary code type.
 #' @param linked_code_type another ICES Vocabulary code type.
-#' @param codes whether to only match a selection of codes within the first code type.
+#' @param codes a vector of codes to restrict the output to.
 #' @param ... for back compatibility.
 #'
 #' @return A data frame.
@@ -18,11 +18,9 @@
 #' @examples
 #' \dontrun{
 #' x <- linkCodes("Pargroup", "PARAM")
-#'
-#' # get all stocks in subarea 4a
-#' # note you would need to cross check with icesSD for
-#' # currently active stocks
-#' linkCodes("ICES_Area", "ICES_StockCode", codes = c("27.4.a"))
+#' # note it is much faster to use:
+#' # getCodeTypeRelation("Pargroup", "PARAM")
+#' # when getting a full lookup table.
 #'
 #' # get all areas for cod.27.1-2
 #' linkCodes("ICES_StockCode", "ICES_Area", codes = c("cod.27.1-2"))
