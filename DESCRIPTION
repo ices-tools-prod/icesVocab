@@ -1,6 +1,6 @@
 Package: icesVocab
 Title: ICES Vocabularies Database Web Services
-Version: 1.3.1
+Version: 1.3.1.9000
 Authors@R: c(person("Colin", "Millar", email = "colin.millar@ices.dk",
   role = c("aut","cre")), person("Arni", "Magnusson", role = "aut"))
 Imports: icesConnect (>= 1.1.4),
@@ -8,6 +8,8 @@ Imports: icesConnect (>= 1.1.4),
           cachem,
           rlang,
           httr
+Suggests: 
+    testthat (>= 3.0.0)
 Description: R interface to access the Vocabularies REST API of the ICES
   (International Council for the Exploration of the Sea) Vocabularies database
   <https://vocab.ices.dk/services/>.
@@ -17,3 +19,4 @@ RoxygenNote: 7.3.2
 Encoding: UTF-8
 BugReports: https://github.com/ices-tools-prod/icesVocab/issues
 Language: en-GB
+Config/testthat/edition: 3

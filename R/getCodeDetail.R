@@ -29,7 +29,7 @@
 #' @export
 
 getCodeDetail <- function(code_type, code) {
-
+  
   # read url contents
   out <-
     vocab_get_cached(
@@ -37,28 +37,32 @@ getCodeDetail <- function(code_type, code) {
         sprintf("CodeDetail/%s/%s", code_type, code)
       )
     )
-
+  
   # convert to detail structure
   names <- c("id", "guid", "key", "description", "longDescription", "modified")
-
+  
   # convert names
   convert_names <- function(x) {
     names(x) <- CamelCase(names(x))
     x
   }
-
-  # return
-  list(
-    detail = convert_names(data.frame(out[names])),
-    parents =
-      list(
-        code_types = convert_names(out$parentRelation$codeType[names]),
-        codes = convert_names(out$parentRelation$code[names])
-      ),
-    children =
-      list(
-        code_types = convert_names(out$childRelation$codeType[names]),
-        codes = convert_names(out$childRelation$code[names])
-      )
-  )
+  if (out$guid == "00000000-0000-0000-0000-000000000000") {
+    message(sprintf("Code %s not found", code))
+    return(NULL)
+  } else {
+    # return
+    list(
+      detail = convert_names(data.frame(out[names])),
+      parents =
+        list(
+          code_types = convert_names(out$parentRelation$codeType[names]),
+          codes = convert_names(out$parentRelation$code[names])
+        ),
+      children =
+        list(
+          code_types = convert_names(out$childRelation$codeType[names]),
+          codes = convert_names(out$childRelation$code[names])
+        )
+    )
+  }
 }
