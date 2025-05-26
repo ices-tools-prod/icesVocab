@@ -1,3 +1,10 @@
+# icesVocab 1.3.2 (2025-05-26)
+
+* bug fix in get requests with spaces in keys. Url encoding is now
+  used to encode spaces as %20 in the URL.
+* CamelCase function adapted to work with NULL values
+* If code not found, functions return NULL instead of mixed return type
+
 # icesVocab 1.3.1 (2025-05-01)
 
 * Switched to new webservices returning JSON instead of XML.

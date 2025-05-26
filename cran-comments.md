@@ -1,7 +1,7 @@
 ## R CMD check results
 
 Checked using
-* using R Under development (unstable) (2025-04-29 r88182 ucrt)
+* using R Under development (unstable) (2025-05-23 r88232 ucrt)
 * using platform: x86_64-w64-mingw32
 * R was compiled by
     gcc.exe (GCC) 14.2.0
