@@ -29,7 +29,7 @@ findCodeType <- function(code, date = NULL, regex = TRUE, full = FALSE)
 {
 
   # get code list
-  types <- getCodeTypeList(date)
+  types <- getCodeTypeList(date=date)
 
   # apply filters
   code <- tolower(code)
