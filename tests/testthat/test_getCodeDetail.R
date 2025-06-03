@@ -15,4 +15,12 @@ test_that("test getCodeDetail does not fail when code wrong",
             expect_message(getCodeDetail("SpecWoRMS", "wrong_code"), "Code wrong_code not found")
           }
 )
+
+
+test_that("test getCodeDetail returns a relation when it exists",
+    {
+      expect_type(getCodeDetail("Station", 1)$attribute, "list")
+    }
+)
+
           
