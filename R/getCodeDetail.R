@@ -5,7 +5,7 @@
 #' @param code_type the code type, e.g. SpecWoRMS.
 #' @param code the code, e.g. 101170.
 #'
-#' @return A data frame.
+#' @return A list.
 #'
 #' @seealso
 #' \code{\link{getCodeTypeList}} and \code{\link{getCodeList}} get code types
@@ -32,37 +32,55 @@ getCodeDetail <- function(code_type, code) {
   
   # read url contents
   out <-
-    vocab_get_cached(
-      vocab_api(
-        sprintf("CodeDetail/%s/%s", code_type, code)
+      vocab_get_cached(
+          vocab_api(
+              sprintf("CodeDetail/%s/%s", code_type, code)
+          )
       )
-    )
+  
   
   # convert to detail structure
   names <- c("id", "guid", "key", "description", "longDescription", "modified")
+  
+  
+  
+  # attribute has fields description 
   
   # convert names
   convert_names <- function(x) {
     names(x) <- CamelCase(names(x))
     x
   }
+  
+  
+  
+  
   if (out$guid == "00000000-0000-0000-0000-000000000000") {
     message(sprintf("Code %s not found", code))
     return(NULL)
   } else {
     # return
-    list(
-      detail = convert_names(data.frame(out[names])),
-      parents =
-        list(
-          code_types = convert_names(out$parentRelation$codeType[names]),
-          codes = convert_names(out$parentRelation$code[names])
-        ),
-      children =
-        list(
-          code_types = convert_names(out$childRelation$codeType[names]),
-          codes = convert_names(out$childRelation$code[names])
-        )
+    codedetail <- list(
+        detail = convert_names(data.frame(out[names])),
+        parents =
+            list(
+                code_types = convert_names(out$parentRelation$codeType[names]),
+                codes = convert_names(out$parentRelation$code[names])
+            ),
+        children =
+            list(
+                code_types = convert_names(out$childRelation$codeType[names]),
+                codes = convert_names(out$childRelation$code[names])
+            )
     )
+    if ( ! is.null(out$attribute)){
+      codedetail$attribute =
+          list(
+              description = convert_names(out$attribute$description),
+              value = out$attribute$value
+          )   
+    }
+    return(codedetail)
+    
   }
 }
