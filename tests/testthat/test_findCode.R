@@ -1,5 +1,6 @@
 test_that("test example code in findCode",
           {
+            skip_on_cran()
             expect_type(findCode("aphia", "cod"), "list")
            
             # Multiple matches

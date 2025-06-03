@@ -1,6 +1,6 @@
 test_that("test example code in getCodeTYpeList",
           {
-            
+            skip_on_cran()
             types <- getCodeTypeList()
             typesw <- types[grep("worms", tolower(types$Description)),]
             expect_gte(nrow(typesw), 1)
@@ -15,7 +15,7 @@ test_that("test example code in getCodeTYpeList",
 
 test_that("test getCodeTYpeList returns a value after 2010",
           {
-            
+            skip_on_cran()
             type <- getCodeTypeList(date="2010-01-01")
             expect_gte(nrow(type), 1)
                      }
