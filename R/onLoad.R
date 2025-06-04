@@ -19,7 +19,8 @@ getcache <- cachem::cache_mem(max_age = 15 * 60)
   # set some default options
   opts <-
     c(
-      icesVocab.messages = "TRUE"
+      icesVocab.messages = "TRUE",
+      icesVocab.showURL = "FALSE"
     )
 
   for (i in setdiff(names(opts), names(options()))) {

@@ -11,6 +11,8 @@
 #'
 #' vocab_api("hi", bye = 21)
 #' vocab_api("CodeType")
+#' options("icesVocab.showURL"=TRUE)
+#' vocab_api("CodeType")
 #'
 #' @importFrom httr parse_url build_url
 #' @export
@@ -19,8 +21,10 @@ vocab_api <- function(service, ...) {
   url <- parse_url(url)
   url$query <- list(...)
   url <- build_url(url)
+  if (getOption("icesVocab.showURL")) message(sprintf("The url is %s", url))
 
-  url
+  return(url)
+
 }
 
 api_url <- function() {
