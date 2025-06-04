@@ -27,10 +27,10 @@ test_that("test getCodeDetail returns a relation when it exists",
 
 
 
-test_that("test getCodeDetail returns the deprecated field",
+test_that("test getCodeDetail returns the deprecated field when it exists",
           {
             skip_on_cran()
-            expect_type(getCodeDetail("Station", 1)$attribute, "list")
+            expect_type(getCodeDetail("Station", 1)$deprecated, "logical")
           }
 )
 
