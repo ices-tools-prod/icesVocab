@@ -38,7 +38,6 @@ getCodeDetail <- function(code_type, code) {
           )
       )
   
-  
   # convert to detail structure
   names <- c("id", "guid", "key", "description", "longDescription", "modified")
   
@@ -79,6 +78,10 @@ getCodeDetail <- function(code_type, code) {
               description = convert_names(out$attribute$description),
               value = out$attribute$value
           )   
+    }
+    if ( ! is.null(out$deprecated)){
+      codedetail$deprecated = out$deprecated
+        
     }
     return(codedetail)
     
