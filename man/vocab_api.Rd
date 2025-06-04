@@ -21,5 +21,7 @@ utility to build a url with optional query arguments
 
 vocab_api("hi", bye = 21)
 vocab_api("CodeType")
+options("icesVocab.showURL"=TRUE)
+vocab_api("CodeType")
 
 }

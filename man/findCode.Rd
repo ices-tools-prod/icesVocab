@@ -32,7 +32,8 @@ findCode("aphia", "cod")
 findCode("aphia", c("cod", "haddock", "saithe"), full = TRUE)
 
 findCodeType("ship", full = TRUE)
-findCode("ship", "clupea", full = TRUE)
+# search for a ship of name "clupea"
+findCode(code_type = "ship", code ="clupea", full = TRUE)
 }
 
 }

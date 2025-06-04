@@ -12,7 +12,7 @@ getCodeDetail(code_type, code)
 \item{code}{the code, e.g. 101170.}
 }
 \value{
-A data frame.
+A list.
 }
 \description{
 Get details for a given code.
