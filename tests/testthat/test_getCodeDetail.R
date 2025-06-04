@@ -24,4 +24,14 @@ test_that("test getCodeDetail returns a relation when it exists",
       expect_type(getCodeDetail("Station", 1)$attribute, "list")
     }
 )
+
+
+
+test_that("test getCodeDetail returns the deprecated field",
+          {
+            skip_on_cran()
+            expect_type(getCodeDetail("Station", 1)$attribute, "list")
+          }
+)
+
      
