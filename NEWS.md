@@ -1,3 +1,10 @@
+# icesVocab 1.3.3 (2025-07-xx)
+
+* bug fix in getCodeDetail failing when code is wrong
+* allows getCodeDetail to return the attribute for complex tables like Station
+* include unit tests for all code in example
+* added an option to print the URL while debugging
+
 # icesVocab 1.3.2 (2025-05-26)
 
 * bug fix in get requests with spaces in keys. Url encoding is now

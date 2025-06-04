@@ -8,5 +8,3 @@ options("icesVocab.showURL"=TRUE)
 expect_message(vocab_api("CodeType"))
           }
 )
-            
-

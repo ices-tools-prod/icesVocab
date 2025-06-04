@@ -24,5 +24,4 @@ test_that("test getCodeDetail returns a relation when it exists",
       expect_type(getCodeDetail("Station", 1)$attribute, "list")
     }
 )
-
-          
+     
